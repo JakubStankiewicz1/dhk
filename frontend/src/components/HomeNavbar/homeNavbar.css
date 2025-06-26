@@ -1,0 +1,188 @@
+.homeNavbar {
+    width: 100%;
+    height: 60px;
+    background-color: #000000;
+    color: white;
+    position: absolute;
+    top: 475px;
+    left: 0;
+    z-index: 5;
+}
+
+.homeNavbar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    transform: translateY(0);
+}
+
+.homeNavbarContainer {
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homeNavbarContainerLeft{
+    display: flex;
+    flex: 1;
+}
+
+.homeNavbarContainerLeftContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeNavbarContainerMiddle {
+    display: flex;
+    flex: 1;
+}
+
+.homeNavbarContainerRight {
+    display: flex;
+    flex: 1;
+}
+
+.homeNavbarContainerMiddleContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.homeNavbarContainerRightContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 95px;
+}
+
+.homeNavbarContainerRightContainerOneContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.homeNavbarContainerLeftContainerTopContainerText {
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.homeNavbarContainerLeftContainerBottomDiv {
+    background-color: #ffffff;
+    width: 5px;
+    height: 5px;
+    transform: translateY(15px);
+}
+
+.homeNavbarContainerMiddleContainerOneContainerText {
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.homeNavbarContainerMiddleContainerOneContainerText:hover {
+    color: rgb(99, 99, 99);
+    font-weight: 700;
+}
+
+.homeNavbarContainerMiddleContainerTwoContainerText {
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.homeNavbarContainerMiddleContainerTwoContainerText:hover {
+    color: rgb(99, 99, 99);
+    font-weight: 700;
+}
+
+.homeNavbarContainerMiddleContainerThreeContainerText {
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.homeNavbarContainerMiddleContainerThreeContainerText:hover {
+    color: rgb(99, 99, 99);
+    font-weight: 700;
+}
+
+.homeNavbarContainerRightContainerOneContainerOneContainerText {
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.homeNavbarContainerRightContainerOneContainerOneContainerText:hover {
+    color: rgb(99, 99, 99);
+    font-weight: 700;
+}
+
+.homeNavbarContainerRightContainerOneContainerTwoContainerText {
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.homeNavbarContainerRightContainerOneContainerThreeContainerText {
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.homeNavbarContainerRightContainerOneContainerThreeContainerText:hover {
+    color: rgb(99, 99, 99);
+    font-weight: 700;
+}
+
+.homeNavbarContainerRightContainerTwoContainerText {
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 22px;
+    cursor: pointer;
+}
+
+.homeNavbarContainerRightContainerTwoContainerText:hover {
+    color: rgb(99, 99, 99);
+    font-weight: 700;
+}

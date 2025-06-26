@@ -1,0 +1,132 @@
+.homeFeaturedProjects {
+    width: 100%;
+    height: 100%;
+
+    background-color: #000000;
+
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.homeFeaturedProjectsContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.homeFeaturedProjectsTopContainerText {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 76px;
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: #ffffff;
+}
+
+.homeFeaturedProjectsTop {
+    width: 100%;
+
+}
+
+.homeFeaturedProjectsTopContainer {
+    width: 100%;
+    transform: translateX(45%);
+}
+
+.homeFeaturedProjectsContainerBottom {
+    padding-top: 50px;
+}
+
+
+.homeFeaturedProjectsContainerBottomContainerMiddle {
+    width: 100%;
+    height: 100%;
+}
+
+.homeFeaturedProjectsContainerBottomContainerMiddleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerOne {
+    display: flex;
+    flex: 1;
+}
+
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerTwo {
+    display: flex;
+    flex: 1;
+}
+
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerThree {
+    display: flex;
+    flex: 1;
+}
+
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerThree {
+    width: 100%;
+    height: 100%;
+    /* background-color: RED; */
+    height: 530px;
+}
+
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButton {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    /* background-color: red; */
+    cursor: pointer;
+}
+
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonOneText,
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonTwoText,
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonThreeText {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display', sans-serif;
+    /* cursor: pointer; */
+}
+
+.homeFeaturedProjectsContainerBottomContainerBottom {
+    width: 100%;
+    height: 100%;
+}
+
+.homeFeaturedProjectsContainerBottomContainerBottomContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeFeaturedProjectsContainerBottomContainerBottomContainerLeft {
+    display: flex;
+    flex: 1;
+}
+
+.homeFeaturedProjectsContainerBottomContainerBottomContainerMiddle {
+    display: flex;
+    flex: 1;
+}
+
+.homeFeaturedProjectsContainerBottomContainerBottomContainerRight {
+    display: flex;
+    flex: 1;
+}

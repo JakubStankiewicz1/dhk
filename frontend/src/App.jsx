@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import "./App.css";
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Lenis from 'lenis';
 
 const App = () => {
+  const lenisRef = useRef(null);
+
   useEffect(() => {
-    // Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -19,14 +20,37 @@ const App = () => {
       infinite: false,
     });
 
+    lenisRef.current = lenis;
+
     function raf(time) {
-      lenis.raf(time);
+
+      if (!document.body.classList.contains('hero-animating')) {
+        lenis.raf(time);
+      }
       requestAnimationFrame(raf);
     }
 
     requestAnimationFrame(raf);
 
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          if (document.body.classList.contains('hero-animating')) {
+            lenis.stop();
+          } else {
+            lenis.start();
+          }
+        }
+      });
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
     return () => {
+      observer.disconnect();
       lenis.destroy();
     };
   }, []);

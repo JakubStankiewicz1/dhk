@@ -1,0 +1,148 @@
+.homeStory {
+    width: 100%;
+    height: 200vh; /* Podwójna wysokość ekranu dla płynnego scrollu */
+    position: relative;
+}
+
+.homeStoryContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+
+.homeStoryContainerImages {
+    width: 100%;
+    height: 100%;
+
+    /* background-color: red; */
+}
+
+.homeStoryContainerImagesContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.homeStoryContainerImagesContainerTop {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: blue;
+}
+
+.homeStoryContainerImagesContainerTopContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /* background-color: lightblue; */
+}
+
+.homeStoryContainerImagesContainerTopContainerImage {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    /* background-color: lightcoral; */
+}
+
+.homeStoryContainerImagesContainerTopContainerImageImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.homeStoryContainerImagesContainerBottom {
+    width: 50vw;
+    height: 100vh;
+
+    background-color: darkviolet;
+}
+
+.homeStoryContainerImagesContainerBottomContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: lightgreen; */
+}
+
+.homeStoryContainerImagesContainerBottomContainerImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* background-color: lightpink; */
+}
+
+.homeStoryContainerImagesContainerBottomContainerImageImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.homeStoryContainerTextContainerLeftButtonTextOne,
+.homeStoryContainerTextContainerLeftButtonTextTwo,
+.homeStoryContainerTextContainerLeftButtonTextThree,
+.homeStoryContainerTextContainerRightContainerOneContainerText,
+.homeStoryContainerTextContainerRightContainerTwoContainerText {
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;;
+}
+
+.homeStoryContainerText {
+    width: 50%;
+    position: relative;
+    /* background-color: darkolivegreen; */
+    transform: translateX(100%) translateY(-96vh);
+    transition: transform 0.05s linear; /* Bardzo płynny, szybki transition */
+    will-change: transform; /* Optymalizacja dla GPU */
+}
+
+.homeStoryContainerTextContainer {
+    width: 95%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    gap: 100px;
+
+    /* background-color: antiquewhite; */
+}
+
+.homeStoryContainerTextContainerLeftButton {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeStoryContainerTextContainerLeftButtonTextTwo {
+    white-space: nowrap;
+}
+
+.homeStoryContainerTextContainerRightContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.homeStoryContainerTextContainerRight {
+    max-width: 400px;
+    /* background-color: red; */
+}

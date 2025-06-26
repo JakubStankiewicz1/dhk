@@ -1,4 +1,22 @@
-@import url('/fonts/stylesheet.css');
+@import url('/fonts/stylesheet-optimized.css');
+
+body.hero-animating {
+  overflow: hidden !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body.hero-animating * {
+  pointer-events: none;
+}
+
+body.hero-animating .homeHero * {
+  pointer-events: auto;
+}
 
 * {
   margin: 0;

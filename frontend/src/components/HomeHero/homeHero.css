@@ -1,14 +1,15 @@
 .homeHero {
     width: 100%;
-    height: 100%;
+    height: 475px;
     overflow: hidden;
     position: relative;
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .homeHeroContainer {
     width: 100%;
-    height: 100%;
-    /* background-color: red; */
+    height: 475px;
     display: flex;
     flex-direction: row;
     gap: 0;
@@ -23,8 +24,6 @@
     flex: 1;
     width: 475px;
     height: 475px;
-
-    background-color: blue;
 }
 
 .homeHeroContainerLeftContainer {
@@ -35,7 +34,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: lightblue;
 }
 
 .homeHeroContainerLeftContainerOne {
@@ -46,10 +44,10 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightcoral;
     z-index: 2;
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateZ(0);
     will-change: transform;
+    backface-visibility: hidden;
 }
 
 .homeHeroContainerLeftContainerOneContainer {
@@ -59,13 +57,12 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightgreen;
 }
 
 .homeHeroContainerLeftContainerOneContainerImg {
     width: 100%;
     height: 100%;
-    background-color: lightgray;
+    object-fit: cover;
 }
 
 .homeHeroContainerLeftContainerTwo {
@@ -76,7 +73,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightyellow;
     z-index: 1;
 }
 
@@ -85,18 +81,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     height: 100%;
-
-    background-color: lightpink;
 }
 
 .homeHeroContainerLeftContainerTwoContainerImg {
     width: 100%;
     height: 100%;
-
-    background-color: lightcyan;
+    object-fit: cover;
 }
 
 .homeHeroContainerMiddle {
@@ -104,8 +96,6 @@
     flex: 1;
     width: 475px;
     height: 475px;
-    
-    background-color: green;
 }
 
 .homeHeroContainerMiddleContainer {
@@ -116,7 +106,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: lightblue;
 }
 
 .homeHeroContainerMiddleContainerOne {
@@ -127,10 +116,10 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightcoral;
     z-index: 2;
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateZ(0);
     will-change: transform;
+    backface-visibility: hidden;
 }
 
 .homeHeroContainerMiddleContainerOneContainer {
@@ -140,13 +129,12 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightgreen;
 }
 
 .homeHeroContainerMiddleContainerOneContainerImg {
     width: 100%;
     height: 100%;
-    background-color: lightgray;
+    object-fit: cover;
 }
 
 .homeHeroContainerMiddleContainerTwo {
@@ -157,7 +145,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightyellow;
     z-index: 1;
 }
 
@@ -168,13 +155,12 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightpink;
 }
 
 .homeHeroContainerMiddleContainerTwoContainerImg {
     width: 100%;
     height: 100%;
-    background-color: lightcyan;
+    object-fit: cover;
 }
 
 .homeHeroContainerRight {
@@ -182,8 +168,6 @@
     flex: 1;
     width: 475px;
     height: 475px;
-    
-    background-color: whitesmoke;
 }
 
 .homeHeroContainerRightContainer {
@@ -194,7 +178,6 @@
     position: relative;
     width: 100%;
     height: 100%;
-    background-color: lightblue;
 }
 
 .homeHeroContainerRightContainerOne {
@@ -205,10 +188,10 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightcoral;
     z-index: 2;
-    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateZ(0);
     will-change: transform;
+    backface-visibility: hidden;
 }
 
 .homeHeroContainerRightContainerOneContainer {
@@ -218,13 +201,12 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightgreen;
 }
 
 .homeHeroContainerRightContainerOneContainerImg {
     width: 100%;
     height: 100%;
-    background-color: lightgray;
+    object-fit: cover;
 }
 
 .homeHeroContainerRightContainerTwo {
@@ -235,7 +217,6 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightyellow;
     z-index: 1;
 }
 
@@ -246,11 +227,10 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: lightpink;
 }
 
 .homeHeroContainerRightContainerTwoContainerImg {
     width: 100%;
     height: 100%;
-    background-color: lightcyan;
+    object-fit: cover;
 }
