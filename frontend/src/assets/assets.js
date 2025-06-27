@@ -18,6 +18,14 @@ import HomeFeaturedProjectsImgFive from './HomeFeaturedProjectsImgFive.webp';
 
 import HomeAwardsImgOne from './HomeAwardsImgOne.webp';
 
+import MenuImage from './MenuImage.webp';
+
+
+import HomeVideoOne from './home.mp4_1.mp4';
+import HomeVideoTwo from './projects.mp4_1.mp4';
+import HomeVideoThree from './studio.mp4_1.mp4';
+import HomeVideoFour from './journal.mp4_1.mp4'
+
 export default {
     HomeHeroImgOne,
     HomeHeroImgTwo,
@@ -36,5 +44,11 @@ export default {
     HomeFeaturedProjectsImgFour,
     HomeFeaturedProjectsImgFive,
 
-    HomeAwardsImgOne
+    HomeAwardsImgOne,
+
+    MenuImage,
+    HomeVideoOne,
+    HomeVideoTwo,
+    HomeVideoThree,
+    HomeVideoFour
 }

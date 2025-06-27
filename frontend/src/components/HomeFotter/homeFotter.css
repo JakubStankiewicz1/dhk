@@ -1,0 +1,155 @@
+.homeFotter {
+    width: 100%;
+    height: 100%;
+
+    padding-top: 180px;
+    padding-bottom: 20px;
+
+    /* color: white; */
+    /* changed it */
+}
+
+.homeFotterContainer {
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.homeFotterContainerLeftContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.homeFotterContainerLeftContainerOneContainerText,
+.homeFotterContainerLeftContainerTwoContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display';
+}
+
+.homeFotterContainerRightContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 80px;
+}
+
+.homeFotterContainerRightContainerFourContainerButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 40px;
+}
+
+.homeFotterContainerRightContainerFourContainerButtonOneContainerText,
+.homeFotterContainerRightContainerFourContainerButtonTwoContainerText,
+.homeFotterContainerRightContainerFourContainerButtonThreeContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display';
+}
+
+.homeFotterContainerRightContainerTwoContainerOneContainerText,
+.homeFotterContainerRightContainerTwoContainerTwoContainerText,
+.homeFotterContainerRightContainerTwoContainerThreeContainerText,
+.homeFotterContainerRightContainerTwoContainerFourContainerText,
+.homeFotterContainerRightContainerTwoContainerFiveContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display';
+}
+
+.homeFotterContainerRightContainerOneContainerOneContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transform: translateX(-15px);
+}
+
+.homeFotterContainerRightContainerOneContainerOneContainerTwoText,
+.homeFotterContainerRightContainerOneContainerTwoContainerText,
+.homeFotterContainerRightContainerOneContainerThreeContainerText,
+.homeFotterContainerRightContainerOneContainerFourContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display';
+}
+
+.homeFotterContainerRightContainerThreeContainerOneContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display';
+}
+
+.homeFotterContainerRightContainerThreeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.homeFotterContainerRightContainerThreeContainerTwoContainerInput,
+.homeFotterContainerRightContainerThreeContainerThreeContainerInput {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    font-family: 'Helvetica Now Display';
+}
+
+.homeFotterContainerRightContainerThreeContainerTwoContainerInput:focus,
+.homeFotterContainerRightContainerThreeContainerThreeContainerInput:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    /* color: #4D4D4D; */
+    font-family: 'Helvetica Now Display';
+}
+
+.homeFotterContainerRightContainerThreeContainerFourContainer {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
+}
+
+.homeFotterContainerRightContainerThreeContainerFourContainerOneContainerText,
+.homeFotterContainerRightContainerThreeContainerFourContainerTwoContainerText,
+.homeFotterContainerRightContainerThreeContainerFourContainerFourContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #4D4D4D;
+    font-family: 'Helvetica Now Display';
+}

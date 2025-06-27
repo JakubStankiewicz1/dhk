@@ -3,6 +3,7 @@ import "./App.css";
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Lenis from 'lenis';
+import Menu from './pages/Menu/Menu';
 
 const App = () => {
   const lenisRef = useRef(null);
@@ -59,6 +60,7 @@ const App = () => {
     <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
       </Routes>
     </div>
   )

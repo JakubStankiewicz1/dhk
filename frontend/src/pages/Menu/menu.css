@@ -1,0 +1,386 @@
+.menu {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+}
+
+.menuContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+
+.menuContainerTop,
+.menuContainerMiddle,
+.menuContainerBottom {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.menuContainerTop {
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menuContainerTopContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menuContainerTopContainerLeftContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuContainerTopContainerLeftContainerOneContainerText,
+.menuContainerTopContainerLeftContainerTwoContainerText,
+.menuContainerTopContainerLeftContainerThreeContainerText,
+.menuContainerTopContainerLeftContainerFourContainerText {
+    font-size: 76px;
+    font-weight: 700;
+    line-height: 101px;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display', sans-serif;
+}
+
+.menuContainerTopContainerLeftContainerOneContainerText,
+.menuContainerTopContainerLeftContainerTwoContainerText,
+.menuContainerTopContainerLeftContainerThreeContainerText,
+.menuContainerTopContainerLeftContainerFourContainerText {
+    cursor: pointer;
+}
+
+.menuContainerTopContainerLeftContainerOneContainerText,
+.menuContainerTopContainerLeftContainerTwoContainerText,
+.menuContainerTopContainerLeftContainerThreeContainerText {
+    padding-right: 14px;
+}
+
+.menuContainerTopContainerRight {
+    margin-top: 15px;
+}
+
+.menuContainerTopContainerRightContainerOneContainerText {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 22px;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display', sans-serif;
+}
+
+.menuContainerTopContainerRightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.menuContainerTopContainerRightContainerTwoDiv {
+    width: 5px;
+    height: 5px;
+    background-color: #ffffff;
+}
+
+.menuContainerMiddle {
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    transform: translateY(20%);
+}
+
+.menuContainerMiddleContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.menuContainerMiddleContainerLeft,
+.menuContainerMiddleContainerMiddle,
+.menuContainerMiddleContainerRight {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.menuContainerMiddleContainerRight {
+    width: 100%;
+    height: 100%;
+}
+
+.menuContainerMiddleContainerRightContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.menuContainerMiddleContainerMiddleContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menuContainerMiddleContainerMiddleContainerOneContainerText,
+.menuContainerMiddleContainerMiddleContainerTwoContainerText,
+.menuContainerMiddleContainerMiddleContainerThreeContainerText {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display', sans-serif;
+}
+
+.menuContainerMiddleContainerRightContainerOneContainerText,
+.menuContainerMiddleContainerRightContainerTwoContainerText,
+.menuContainerMiddleContainerRightContainerThreeContainerText,
+.menuContainerMiddleContainerRightContainerFourContainerText,
+.menuContainerMiddleContainerRightContainerFiveContainerText {
+    color: #565656;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    font-family: 'Helvetica Now Display', sans-serif;
+}
+
+.menuContainerMiddleContainerLeftContainerOneContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display', sans-serif;
+}
+
+.menuContainerMiddleContainerLeftContainerTwoContainerInput,
+.menuContainerMiddleContainerLeftContainerThreeContainerInput {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: #565656;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    font-family: 'Helvetica Now Display', sans-serif;
+}
+
+.menuContainerMiddleContainerLeftContainerTwoContainerInput:focus,
+.menuContainerMiddleContainerLeftContainerThreeContainerInput:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #565656;
+}
+
+.menuContainerMiddleContainerLeftContainerTwoContainerInput::placeholder,
+.menuContainerMiddleContainerLeftContainerThreeContainerInput::placeholder {
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    font-family: 'Helvetica Now Display', sans-serif;
+}
+
+.menuContainerMiddleContainerLeftContainerFourContainerButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menuContainerMiddleContainerLeftContainerFourContainerButtonOneContainerText,
+.menuContainerMiddleContainerLeftContainerFourContainerButtonTwoContainerText,
+.menuContainerMiddleContainerLeftContainerFourContainerButtonThreeContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #4D4D4D;
+    font-family: 'Helvetica Now Display', sans-serif;
+}
+
+.menuContainerMiddleContainerLeftContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.menuContainerBottom {
+    width: 100%;
+    height: 100%;
+}
+
+.menuContainerBottomContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 120px;
+}
+
+.menuContainerBottomContainerRight {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.menuContainerBottomContainerRightContainer {
+    width: 230px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.menuContainerBottomContainerRightContainerImage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.menuContainerBottomContainerRightContainerImageImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menuContainerTopContainerLeftContainerOne:hover .menuContainerBottomContainerRightContainer,
+.menuContainerTopContainerLeftContainerTwo:hover .menuContainerBottomContainerRightContainer,
+.menuContainerTopContainerLeftContainerThree:hover .menuContainerBottomContainerRightContainer,
+.menuContainerTopContainerLeftContainerFour:hover .menuContainerBottomContainerRightContainer {
+    opacity: 0;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerOne:hover) .menuContainerBottomContainerRightContainer {
+    opacity: 0;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerTwo:hover) .menuContainerBottomContainerRightContainer {
+    opacity: 0;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerThree:hover) .menuContainerBottomContainerRightContainer {
+    opacity: 0;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerFour:hover) .menuContainerBottomContainerRightContainer {
+    opacity: 0;
+}
+
+.menuContainerBottomContainerLeft {
+    width: 100%;
+    height: 100%;
+}
+
+.menuContainerBottomContainerLeftContainer {
+    width: 95%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.menuContainerBottomContainerLeftContainerOne,
+.menuContainerBottomContainerLeftContainerTwo,
+.menuContainerBottomContainerLeftContainerThree,
+.menuContainerBottomContainerLeftContainerFour {
+    height: 240px;
+    width: 220px;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.menuContainerBottomContainerLeftContainerOneContainer,
+.menuContainerBottomContainerLeftContainerTwoContainer,
+.menuContainerBottomContainerLeftContainerThreeContainer,
+.menuContainerBottomContainerLeftContainerFourContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.menuContainerBottomContainerLeftContainerOneContainerImage,
+.menuContainerBottomContainerLeftContainerTwoContainerImage,
+.menuContainerBottomContainerLeftContainerThreeContainerImage,
+.menuContainerBottomContainerLeftContainerFourContainerImage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.menuContainerBottomContainerLeftContainerOneContainerImageVid,
+.menuContainerBottomContainerLeftContainerTwoContainerImageVid,
+.menuContainerBottomContainerLeftContainerThreeContainerImageVid,
+.menuContainerBottomContainerLeftContainerFourContainerImageVid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerOne:hover) .menuContainerBottomContainerLeftContainerOne {
+    opacity: 1;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerTwo:hover) .menuContainerBottomContainerLeftContainerTwo {
+    opacity: 1;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerThree:hover) .menuContainerBottomContainerLeftContainerThree {
+    opacity: 1;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerFour:hover) .menuContainerBottomContainerLeftContainerFour {
+    opacity: 1;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerOne:hover) .menuContainerBottomContainerLeftContainerOne {
+    opacity: 1;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerTwo:hover) .menuContainerBottomContainerLeftContainerTwo {
+    opacity: 1;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerThree:hover) .menuContainerBottomContainerLeftContainerThree {
+    opacity: 1;
+}
+
+.menuContainer:has(.menuContainerTopContainerLeftContainerFour:hover) .menuContainerBottomContainerLeftContainerFour {
+    opacity: 1;
+}

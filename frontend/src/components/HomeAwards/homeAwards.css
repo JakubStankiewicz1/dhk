@@ -8,7 +8,7 @@
 
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    /* gap: 100px; */
 
     padding-top: 50px;
     padding-bottom: 50px;
@@ -23,6 +23,8 @@
     margin-left: auto;
     margin-right: auto;
     height: 100%;
+
+    /* background-color: red; */
 }
 
 .homeAwardsContainerLeft {
@@ -39,20 +41,150 @@
     /* background-color: blue; */
 }
 
+.homeAwardsImageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.homeAwardsImageContainer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.homeAwardsImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
 
+.homeAwardsContainerRightContainer {
+    width: 100%;
+    height: 100%;
+
+    /* background-color: red; */
+
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+}
+
+.homeAwardsContainerRightContainerRight {
+    width: 140px;
+    height: 100%;
+    position: relative;
+}
 
 
+.homeAwardsContainerRightContainerLeft {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+}
 
+.homeAwardsItem {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* border-radius: 6px; */
+    position: relative;
 
+    background-color: red;
+}
 
+/* Enhanced hover effects */
+.homeAwardsItem:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+    transform: translateX(8px);
+    padding-left: 12px;
+    padding-right: 12px;
+}
 
+.homeAwardsItem:hover .homeAwardsItemTextOne {
+    color: #ffffff;
+}
 
+.homeAwardsItem:hover .homeAwardsItemProject {
+    color: #cccccc;
+}
 
+.homeAwardsItem:hover .homeAwardsItemYear {
+    color: #a0a0a0;
+}
 
+.homeAwardsItemOne {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    flex: 1;
+}
 
+.homeAwardsItemYear {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: #808080;
+    min-width: 50px;
+}
 
+.homeAwardsItemText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
 
+.homeAwardsItemTextOne {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: #ffffff;
+}
+
+.homeAwardsItemTextTwo {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: #808080;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.homeAwardsItem:hover .homeAwardsItemTextTwo {
+    max-height: 20px;
+    opacity: 1;
+    margin-top: 2px;
+}
+
+.homeAwardsItemProject {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    font-family: 'Helvetica Now Display', sans-serif;
+    color: #ffffff;
+    text-align: right;
+    min-width: 150px;
+}
 
 
 
@@ -82,6 +214,7 @@
 .homeAwardsContainerRightContainerBottom {
     width: 100%;
     height: 100%;
+    padding-top: 100px;
 }
 
 .homeAwardsContainerRightContainerBottomContainerButtonContainer {
@@ -113,20 +246,21 @@
     color: #ffffff;
 }
 
-.homeAwardsItemYear,
-.homeAwardsItemTextOne,
-.homeAwardsItemProject {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 19px;
-    font-family: 'Helvetica Now Display', sans-serif;
-    color: #808080;
+/* Load More Button Styles */
+/* .homeAwardsContainerRightContainerBottomContainerButtonContainer:hover {
+    transform: translateY(-2px);
+} */
+
+.homeAwardsContainerRightContainerBottomContainerButtonContainer:hover .homeAwardsContainerRightContainerBottomContainerButtonContainerTwoText {
+    color: #cccccc;
 }
 
-.homeAwardsItemTextTwo {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 19px;
-    font-family: 'Helvetica Now Display', sans-serif;
-    color: #808080;
+.homeAwardsContainerRightContainerBottomContainerButtonContainer:hover .homeAwardsContainerRightContainerBottomContainerButtonContainerOneText,
+.homeAwardsContainerRightContainerBottomContainerButtonContainer:hover .homeAwardsContainerRightContainerBottomContainerButtonContainerThreeText {
+    color: #cccccc;
 }
+
+.homeAwardsContainerRightContainerBottomContainerButtonContainer {
+    transition: all 0.3s ease;
+}
+
