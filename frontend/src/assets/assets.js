@@ -26,6 +26,16 @@ import HomeVideoTwo from './projects.mp4_1.mp4';
 import HomeVideoThree from './studio.mp4_1.mp4';
 import HomeVideoFour from './journal.mp4_1.mp4'
 
+
+
+
+import JournalArticlesImageOne from './JournalArticlesImageOne.jpg';
+import JournalArticlesImageTwo from './JournalArticlesImageTwo.jpg';
+import JournalArticlesImageThree from './JournalArticlesImageThree.webp';
+import JournalArticlesImageFour from './JournalArticlesImageFour.jpg';
+import JournalArticlesImageFive from './JournalArticlesImageFive.webp';
+import JournalArticlesImageSix from './JournalArticlesImageSix.webp';
+
 export default {
     HomeHeroImgOne,
     HomeHeroImgTwo,
@@ -50,5 +60,14 @@ export default {
     HomeVideoOne,
     HomeVideoTwo,
     HomeVideoThree,
-    HomeVideoFour
+    HomeVideoFour,
+
+
+
+    JournalArticlesImageOne,
+    JournalArticlesImageTwo,
+    JournalArticlesImageThree,
+    JournalArticlesImageFour,
+    JournalArticlesImageFive,
+    JournalArticlesImageSix
 }
