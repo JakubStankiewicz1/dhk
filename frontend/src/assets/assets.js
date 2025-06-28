@@ -36,6 +36,11 @@ import JournalArticlesImageFour from './JournalArticlesImageFour.jpg';
 import JournalArticlesImageFive from './JournalArticlesImageFive.webp';
 import JournalArticlesImageSix from './JournalArticlesImageSix.webp';
 
+
+import ProjectsImgOne from './ProjectsImgOne.webp';
+import ProjectsImgTwo from './ProjectsImgTwo.webp';
+import ProjectsImgThree from './ProjectsImgThree.jpg';
+
 export default {
     HomeHeroImgOne,
     HomeHeroImgTwo,
@@ -69,5 +74,11 @@ export default {
     JournalArticlesImageThree,
     JournalArticlesImageFour,
     JournalArticlesImageFive,
-    JournalArticlesImageSix
+    JournalArticlesImageSix,
+
+
+
+    ProjectsImgOne,
+    ProjectsImgTwo,
+    ProjectsImgThree
 }

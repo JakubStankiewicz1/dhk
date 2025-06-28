@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import Lenis from 'lenis';
 import Menu from './pages/Menu/Menu';
 import Journal from './pages/Journal/Journal';
+import Projects from './pages/Projects/Projects';
 
 const App = () => {
   const lenisRef = useRef(null);
@@ -63,6 +64,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/journal" element={<Journal />} />
+        <Route path="/projects" element={<Projects />} />
       </Routes>
     </div>
   )
