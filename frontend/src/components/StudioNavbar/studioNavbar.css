@@ -1,0 +1,64 @@
+.studioNavbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* background: #fff; */
+    /* box-shadow: 0 2px 16px 0 rgba(0,0,0,0.04); */
+}
+
+.studioNavbarContainer {
+        width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.studioNavbarContainerLeftContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 650px;
+}
+
+.studioNavbarContainerLeftContainerTwoContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.studioNavbarContainerLeftContainerTwoContainerTwo {
+    transform: translateY(9px);
+}
+
+.studioNavbarContainerLeftContainerTwoContainerTwoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.studioNavbarContainerLeftContainerTwoContainerTwoContainerTwoDiv {
+    width: 5px;
+    height: 5px;
+    background-color: #ffffff;
+}
+
+.studioNavbarContainerLeftContainerOneContainerText,
+.studioNavbarContainerLeftContainerTwoContainerOneContainer,
+.studioNavbarContainerLeftContainerTwoContainerTwoContainerOneText,
+.studioNavbarContainerLeftContainerTwoContainerThreeContainerText,
+.studioNavbarContainerRightContainerText {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}

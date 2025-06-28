@@ -1,53 +1,43 @@
 .projectsElements {
     width: 100%;
-    background-color: #000000;
-    padding-bottom: 100px;
+
+    padding-bottom: 500px;
 }
 
 .projectsElementsContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
 .projectsElementsContainer > * {
-    position: sticky;
-    top: 0;
+    position: relative;
     background: white;
+    /* Ultra-smooth transition - długa i bardzo płynna */
+    transition: height 0.1s cubic-bezier(0.23, 1, 0.32, 1); /* Bardzo szybka i płynna dla wheel control */
 }
 
-.projectsElementsContainer > *:nth-child(1) { z-index: 1; }
-.projectsElementsContainer > *:nth-child(2) { z-index: -2; }
-.projectsElementsContainer > *:nth-child(3) { z-index: 3; }
-.projectsElementsContainer > *:nth-child(4) { z-index: 4; }
-.projectsElementsContainer > *:nth-child(5) { z-index: 5; }
-.projectsElementsContainer > *:nth-child(6) { z-index: 6; }
-.projectsElementsContainer > *:nth-child(7) { z-index: 7; }
-.projectsElementsContainer > *:nth-child(8) { z-index: 8; }
-.projectsElementsContainer > *:nth-child(9) { z-index: 9; }
-.projectsElementsContainer > *:nth-child(10) { z-index: 10; }
-.projectsElementsContainer > *:nth-child(11) { z-index: 11; }
+/* Wysokości początkowe - będą nadpisane przez JavaScript */
+.projectsElementsContainer > *:nth-child(1) { height: 140px; }
+.projectsElementsContainer > *:nth-child(n+2) { height: 53px; }
 
-.projectsElementsBottom {
-    margin-top: 60px;
-    margin-left: 26%
+/* Dodatkowe style dla ultra-płynnych animacji */
+.projectsElementsContainer > * {
+    /* Lepsze performance dla animacji */
+    will-change: height;
+    transform: translateZ(0); /* Hardware acceleration */
+    backface-visibility: hidden;
+    
+    /* Ultra-smooth transition zoptymalizowany dla wheel control */
+    transition: 
+        height 0.08s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 0.3s ease-out;
 }
 
-.projectsElementsBottomContainerButtonContainerOneContainerText,
-.projectsElementsBottomContainerButtonContainerTwoContainerText,
-.projectsElementsBottomContainerButtonContainerThreeContainerText {
-    font-size: 14px;
-    font-weight: 800;
-    line-height: 19px;
-    color: #FFFFFF;
-    font-family: 'Helvetica Now Display';   
-}
-
-.projectsElementsBottomContainerButtonContainer {
-    display: flex;
-    flex-direction: row;
-    /* justify-content: center; */
-    align-items: center;
-    gap: 20px;
+/* Efekt hover dla dodatkowej interaktywności */
+.projectsElementsContainer > *:hover {
+    transform: translateX(115px);
+    transition: 
+        height 1.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }

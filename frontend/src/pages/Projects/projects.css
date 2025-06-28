@@ -1,0 +1,80 @@
+/* Ultra smooth and slow scroll effect for Projects page */
+html {
+  scroll-behavior: smooth;
+}
+
+.projects-page {
+  /* Create a very smooth scroll experience */
+  scroll-behavior: smooth;
+  
+  /* Add some scroll snap for extra smoothness */
+  scroll-snap-type: y proximity;
+  
+  /* Enhanced performance for smooth animations */
+  will-change: scroll-position;
+  transform: translateZ(0); /* Hardware acceleration */
+}
+
+/* Individual sections with scroll snap points */
+.projects-page > * {
+  scroll-snap-align: start;
+  /* Smooth transitions for all child elements */
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Custom scrollbar for enhanced visual appeal */
+.projects-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.projects-page::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.projects-page::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.projects-page::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Ultra smooth easing for all animations */
+.projects-page * {
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  backface-visibility: hidden; /* Prevent flickering */
+  -webkit-font-smoothing: antialiased; /* Better text rendering */
+}
+
+/* Easing for scroll-triggered animations */
+@media (prefers-reduced-motion: no-preference) {
+  .projects-page {
+    scroll-behavior: smooth;
+  }
+  
+  /* Add subtle momentum effect */
+  .projects-page > div {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
+/* Additional smooth scroll properties for the entire page */
+body {
+  scroll-behavior: smooth;
+  /* Prevent scroll bouncing on iOS */
+  overscroll-behavior: none;
+}
+
+/* Enhanced scroll performance */
+* {
+  /* Optimize scroll performance */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}

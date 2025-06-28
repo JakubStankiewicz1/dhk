@@ -1,7 +1,6 @@
 .projectsElementsEle {
     width: 100%;
-    /* height: 100vh; Pełna wysokość viewport */
-    height: 100%;
+    height: 680px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,13 +27,9 @@
 .projectsElementsEleContainerLeft {
     display: flex;
     flex: 1;
-
-    /* padding-left: 10px; */
 }
 
 .projectsElementsEleContainerLeftContainer {
-    /* padding-left: 10px; */
-
     width: 100%;
     height: 100%;
     display: flex;
@@ -48,12 +43,9 @@
 }
 
 .projectsElementsEleContainerRight {
-    /* height: 80vh; Większość wysokości viewport */
     width: 100%;
     display: flex;
     flex: 2.85;
-
-    /* background-color: red; */
 }
 
 .projectsElementsEleContainerRight {
@@ -86,6 +78,5 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* border-radius: 10px; */
-    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+    object-position: center center;
 }

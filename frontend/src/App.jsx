@@ -6,6 +6,7 @@ import Lenis from 'lenis';
 import Menu from './pages/Menu/Menu';
 import Journal from './pages/Journal/Journal';
 import Projects from './pages/Projects/Projects';
+import Studio from './pages/Studio/Studio';
 
 const App = () => {
   const lenisRef = useRef(null);
@@ -65,6 +66,7 @@ const App = () => {
         <Route path="/menu" element={<Menu />} />
         <Route path="/journal" element={<Journal />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/studio" element={<Studio />} />
       </Routes>
     </div>
   )
