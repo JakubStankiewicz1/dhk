@@ -1,0 +1,163 @@
+.journalFotter {
+    width: 100%;
+    height: 100%;
+    padding-top: 180px;
+    padding-bottom: 20px;
+}
+
+.journalFotterContainer {
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.journalFotterContainerLeftContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.journalFotterContainerLeftContainerOneContainerText,
+.journalFotterContainerLeftContainerTwoContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #000000;
+    font-family: 'Helvetica Now Display';
+}
+
+.journalFotterContainerRightContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 80px;
+}
+
+.journalFotterContainerRightContainerFourContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 40px;
+}
+
+.journalFotterContainerRightContainerFourContainerOneContainerText,
+.journalFotterContainerRightContainerFourContainerTwoContainerText,
+.journalFotterContainerRightContainerFourContainerThreeContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #000000;
+    font-family: 'Helvetica Now Display';
+}
+
+.journalFotterContainerRightContainerTwoContainerOneContainerText,
+.journalFotterContainerRightContainerTwoContainerTwoContainerText,
+.journalFotterContainerRightContainerTwoContainerThreeContainerText,
+.journalFotterContainerRightContainerTwoContainerFourContainerText,
+.journalFotterContainerRightContainerTwoContainerFiveContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #000000;
+    font-family: 'Helvetica Now Display';
+}
+
+.journalFotterContainerRightContainerOneContaineOneContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10px; */
+    transform: translateX(-11px);
+}
+
+.journalFotterContainerRightContainerOneContaineOneContainerText,
+.journalFotterContainerRightContainerOneContaineTwoContainerText,
+.journalFotterContainerRightContainerOneContaineThreeContainerText,
+.journalFotterContainerRightContainerOneContaineFourContainerRightText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #000000;
+    font-family: 'Helvetica Now Display';
+}
+
+.journalFotterContainerRightContainerThreeContainerOneContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #000000;
+    font-family: 'Helvetica Now Display';
+}
+
+.journalFotterContainerRightContainerThreeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.journalFotterContainerRightContainerThreeContainerTwoContainerInput,
+.journalFotterContainerRightContainerThreeContainerThreeContainerInput {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: #FF0000;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    font-family: 'Helvetica Now Display';
+}
+
+.journalFotterContainerRightContainerThreeContainerTwoContainerInput:focus,
+.journalFotterContainerRightContainerThreeContainerThreeContainerInput:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #FF0000;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    font-family: 'Helvetica Now Display';
+}
+
+.journalFotterContainerRightContainerThreeContainerFourContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.journalFotterContainerRightContainerThreeContainerFourContainerOneContainerText,
+.journalFotterContainerRightContainerThreeContainerFourContainerTwoContainerText,
+.journalFotterContainerRightContainerThreeContainerFourContainerThreeContainerText {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 19px;
+    color: #000000;
+    font-family: 'Helvetica Now Display';
+}
+
+.journalFotterContainerRightContainerOneContaineFourContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transform: translateX(-15px);
+}
+
+.journalFotterContainerRightContainerOneContaineFourContainerLeftDiv {
+    width: 5px;
+    height: 5px;
+    background-color: #000000;
+}

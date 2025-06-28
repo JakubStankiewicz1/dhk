@@ -3,6 +3,7 @@ import './journal.css';
 import JournalNavbar from '../../components/JournalNavbar/JournalNavbar';
 import JournalHeader from '../../components/JournalHeader/JournalHeader';
 import JournalArticles from '../../components/JournalArticles/JournalArticles';
+import JournalFotter from '../../components/JournalFotter/JournalFotter';
 
 const Journal = () => {
   return (
@@ -10,6 +11,7 @@ const Journal = () => {
         <JournalNavbar />
         <JournalHeader />
         <JournalArticles />
+        <JournalFotter />
     </div>
   )
 }
