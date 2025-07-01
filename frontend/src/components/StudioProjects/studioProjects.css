@@ -1,0 +1,132 @@
+.studioProjects {
+    width: 100%;
+    height: 100%;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.studioProjectsContainer {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.studioProjectsContainerleftLeft {
+    display: flex;
+    flex: 1.86;
+
+    /* background-color: red; */
+}
+
+.studioProjectsContainerleftLeftContainer {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.studioProjectsContainerleftLeftContainerOne {
+    width: 100%;
+    height: 85vh;
+
+    background-color: darkgreen;
+}
+
+.studioProjectsContainerleftLeftContainerTwo {
+    width: 100%;
+    height: 85vh;
+
+    background-color: darkslategrey;
+}
+
+.studioProjectsContainerRight {
+    display: flex;
+    flex: 4;
+
+    background-color: blue;
+}
+
+.studioProjectsContainerRightContainer {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.studioProjectsContainerRightContainerImage {
+    height: 170vh;
+    width: 100%;
+
+    background-color: aquamarine;
+}
+
+
+
+
+.studioProjectsContainerleftLeftContainerText {
+    background-color: purple;
+
+    width: 100%;
+    height: 100%;
+
+    padding-left: 30px;
+}
+
+.studioProjectsContainerleftLeftContainerTextContainerText {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 19px;
+    font-style: 'Helvetica Neue', sans-serif;
+}
+
+.studioProjectsContainerRightContainerTextContainerOneContainer {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 20px;
+}
+
+.studioProjectsContainerRightContainerTextContainerOneContainerOneText,
+.studioProjectsContainerRightContainerTextContainerOneContainerTwoText,
+.studioProjectsContainerRightContainerTextContainerOneContainerThreeText {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 19px;
+    font-style: 'Helvetica Neue', sans-serif;
+}
+
+.studioProjectsContainerRightContainerTextContainer {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding-left: 20px;
+}
+
+.studioProjectsContainerRightContainerTextContainerTwo {
+    background-color: orange;
+    max-width: 34vw;
+}
+
+.studioProjectsContainerRightContainerTextContainerTwoContainerText {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 19px;
+    font-style: 'Helvetica Neue', sans-serif;
+}

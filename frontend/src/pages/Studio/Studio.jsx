@@ -3,6 +3,7 @@ import './studio.css';
 import StudioNavbar from '../../components/StudioNavbar/StudioNavbar';
 import StudioHero from '../../components/StudioHero/StudioHero';
 import StudioHeroTwo from '../../components/StudioHeroTwo/StudioHeroTwo';
+import StudioProjects from '../../components/StudioProjects/StudioProjects';
 
 const Studio = () => {
   return (
@@ -10,6 +11,7 @@ const Studio = () => {
         <StudioNavbar />
         <StudioHero />
         <StudioHeroTwo />
+        <StudioProjects />
     </div>
   )
 }
