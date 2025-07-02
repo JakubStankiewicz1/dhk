@@ -2,8 +2,14 @@
     width: 100%;
     height: 100%;
 
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 300px;
+    padding-bottom: 5500px;
+
+
+    background-color: #101010;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .studioProjectsContainer {
@@ -34,22 +40,69 @@
 .studioProjectsContainerleftLeftContainerOne {
     width: 100%;
     height: 85vh;
+}
 
-    background-color: darkgreen;
+.studioProjectsContainerleftLeftContainerOneContainer {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.studioProjectsContainerleftLeftContainerOneContainerImage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.studioProjectsContainerleftLeftContainerOneContainerImageImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.studioProjectsContainerleftLeftContainerOneContainerImageImg:hover {
+    transform: scale(1.05);
 }
 
 .studioProjectsContainerleftLeftContainerTwo {
     width: 100%;
     height: 85vh;
+    overflow: hidden;
+    position: relative;
+}
 
-    background-color: darkslategrey;
+.studioProjectsContainerleftLeftContainerTwoContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.studioProjectsContainerleftLeftContainerTwoContainerImage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.studioProjectsContainerleftLeftContainerTwoContainerImageImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.studioProjectsContainerleftLeftContainerTwoContainerImageImg:hover {
+    transform: scale(1.05);
 }
 
 .studioProjectsContainerRight {
     display: flex;
     flex: 4;
-
-    background-color: blue;
 }
 
 .studioProjectsContainerRightContainer {
@@ -64,21 +117,42 @@
 .studioProjectsContainerRightContainerImage {
     height: 170vh;
     width: 100%;
-
-    background-color: aquamarine;
+    overflow: hidden;
+    position: relative;
 }
 
-
-
-
-.studioProjectsContainerleftLeftContainerText {
-    background-color: purple;
-
+.studioProjectsContainerRightContainerImageContainer {
     width: 100%;
     height: 100%;
-
-    padding-left: 30px;
 }
+
+.studioProjectsContainerRightContainerImageContainerImage {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.studioProjectsContainerRightContainerImageContainerImageImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.studioProjectsContainerRightContainerImageContainerImageImg:hover {
+    transform: scale(1.05);
+}
+
+/* .studioProjectsContainerleftLeftContainerText {
+    width: 100%;
+    height: 100%;
+    padding-left: 30px;
+    z-index: 10;
+    position: absolute;
+    top: 400px;
+} */
 
 .studioProjectsContainerleftLeftContainerTextContainerText {
     font-size: 14px;
@@ -87,6 +161,15 @@
     line-height: 19px;
     font-style: 'Helvetica Neue', sans-serif;
 }
+
+/* 
+.studioProjectsContainerRightContainerText {
+    transform: translateY(-83.5vh);
+
+    position: absolute;
+
+    top: 400px;
+} */
 
 .studioProjectsContainerRightContainerTextContainerOneContainer {
     display: flex;
@@ -109,17 +192,15 @@
 .studioProjectsContainerRightContainerTextContainer {
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-
-    padding-left: 20px;
+    gap: 200px;
 }
 
 .studioProjectsContainerRightContainerTextContainerTwo {
-    background-color: orange;
+    /* background-color: orange; */
     max-width: 34vw;
 }
 
@@ -129,4 +210,86 @@
     color: #ffffff;
     line-height: 19px;
     font-style: 'Helvetica Neue', sans-serif;
+}
+
+/* Parallax effects */
+.studioProjectsRightTextParallax {
+    transition: transform 0.05s linear;
+    will-change: transform;
+}
+
+.studioProjectsRightImageParallax {
+    transition: transform 0.05s linear;
+    will-change: transform;
+}
+
+.studioProjectsLeftImagesReverse {
+    transition: transform 0.05s linear;
+    will-change: transform;
+}
+
+.studioProjectsLeftTextReverse {
+    transition: transform 0.05s linear;
+    will-change: transform;
+}
+
+
+.studioProjectsBtm {
+    width: 100%;
+    /* padding: 100px 0; */
+    /* background-color: #101010; */
+
+    /* background-color: red; */
+
+    position: absolute;
+
+    top: 300px;
+}
+
+.studioProjectsBtmContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.studioProjectsBtmContainerLeft {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    transform: translateY(300px);
+}
+
+.studioProjectsBtmContainerRight {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    transform: translateY(268px);
+}
+
+/* Bottom section text alignment */
+.studioProjectsBtmContainerLeft .studioProjectsContainerleftLeftContainerText {
+    margin: 0;
+    padding: 0;
+}
+
+.studioProjectsBtmContainerLeft .studioProjectsContainerleftLeftContainerTextContainer {
+    margin: 0;
+    padding: 0;
+}
+
+.studioProjectsBtmContainerRight .studioProjectsContainerRightContainerTextContainer {
+    padding-left: 0;
+    margin: 0;
+    gap: 20px;
 }

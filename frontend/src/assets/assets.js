@@ -45,6 +45,10 @@ import ProjectsImgThree from './ProjectsImgThree.jpg';
 
 import StudioHeroImage from './StudioHeroImage.webp';
 
+import StudioProjectsImgOne from './StudioProjectsImgOne.jpg';
+import StudioProjectsImgTwo from './StudioProjectsImgTwo.webp';
+import StudioProjectsImgThree from './StudioProjectsImgThree.webp';
+
 export default {
     HomeHeroImgOne,
     HomeHeroImgTwo,
@@ -86,5 +90,9 @@ export default {
     ProjectsImgTwo,
     ProjectsImgThree,
 
-    StudioHeroImage
+    StudioHeroImage,
+
+    StudioProjectsImgOne,
+    StudioProjectsImgTwo,
+    StudioProjectsImgThree
 }
