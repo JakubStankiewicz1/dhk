@@ -49,6 +49,22 @@ import StudioProjectsImgOne from './StudioProjectsImgOne.jpg';
 import StudioProjectsImgTwo from './StudioProjectsImgTwo.webp';
 import StudioProjectsImgThree from './StudioProjectsImgThree.webp';
 
+
+
+
+
+
+import StudioWhatWeDoImgOne from './StudioWhatWeDoImgOne.webp';
+
+import StudioWhatWeDoImgTwo from './StudioWhatWeDoImgTwo.webp';
+import StudioWhatWeDoImgThree from './StudioWhatWeDoImgThree.webp';
+import StudioWhatWeDoImgFour from './StudioWhatWeDoImgFour.webp';
+import StudioWhatWeDoImgFive from './StudioWhatWeDoImgFive.webp';
+import StudioWhatWeDoImgSix from './StudioWhatWeDoImgSix.webp';
+import StudioWhatWeDoImgSeven from './StudioWhatWeDoImgSeven.webp';
+import StudioWhatWeDoImgEight from './StudioWhatWeDoImgEight.webp';
+import StudioWhatWeDoImgNine from './StudioWhatWeDoImgNine.webp';
+
 export default {
     HomeHeroImgOne,
     HomeHeroImgTwo,
@@ -94,5 +110,17 @@ export default {
 
     StudioProjectsImgOne,
     StudioProjectsImgTwo,
-    StudioProjectsImgThree
+    StudioProjectsImgThree,
+
+
+
+    StudioWhatWeDoImgOne,
+    StudioWhatWeDoImgTwo,
+    StudioWhatWeDoImgThree,
+    StudioWhatWeDoImgFour,
+    StudioWhatWeDoImgFive,
+    StudioWhatWeDoImgSix,
+    StudioWhatWeDoImgSeven,
+    StudioWhatWeDoImgEight,
+    StudioWhatWeDoImgNine
 }
