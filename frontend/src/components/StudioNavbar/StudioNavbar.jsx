@@ -14,6 +14,14 @@ const StudioNavbar = () => {
                                 home
                             </p>
                         </div>
+
+                        <div className="studioNavbarContainerLeftContainerOneHover">
+                            <div className="studioNavbarContainerLeftContainerOneHoverCont">
+                                <p className="studioNavbarContainerLeftContainerOneHoverContText">
+                                    dhk
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="studioNavbarContainerLeftContainerTwo">

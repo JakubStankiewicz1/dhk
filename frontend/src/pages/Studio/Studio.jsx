@@ -5,6 +5,7 @@ import StudioHero from '../../components/StudioHero/StudioHero';
 import StudioHeroTwo from '../../components/StudioHeroTwo/StudioHeroTwo';
 import StudioProjects from '../../components/StudioProjects/StudioProjects';
 import StudioWhatWeDo from '../../components/StudioWhatWeDo/StudioWhatWeDo_NEW';
+import StudioLeadershipTeam from '../../components/StudioLeadershipTeam/StudioLeadershipTeam';
 
 const Studio = () => {
   return (
@@ -14,6 +15,7 @@ const Studio = () => {
         <StudioHeroTwo />
         <StudioProjects />
         <StudioWhatWeDo />
+        <StudioLeadershipTeam />
     </div>
   )
 }

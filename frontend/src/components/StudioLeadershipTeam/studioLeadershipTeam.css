@@ -1,0 +1,97 @@
+.studioLeadershipTeam {
+    width: 100%;
+    height: 100%;
+
+    background-color: #000000;
+}
+
+.studioLeadershipTeamContainer {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.studioLeadershipTeamContainerTop {
+    transform: translateX(50%);
+}
+
+.studioLeadershipTeamContainerTopContainerText {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 77px;
+    color: #ffffff;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.studioLeadershipTeamContainerBottom {
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+}
+
+.studioLeadershipTeamContainerBottomContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.studioLeadershipTeamContainerBottomContainerElement {
+    width: 100%;
+    height: 100%;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementCont {
+    width: 97.4%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContLeft {
+    display: flex;
+    flex: 1;
+    /* background-color: red; */
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContLeftContainer {
+    width: 29px;
+    height: 29px;
+    /* background-color: #ffffff; */
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContLeftContainerImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* border-radius: 50%; */
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContRight {
+    display: flex;
+    flex: 1;
+    /* background-color: blue; */
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContRightContainerText {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    color: #333333;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContTwo {
+    display: none;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContTwo {
+    display: none;
+}

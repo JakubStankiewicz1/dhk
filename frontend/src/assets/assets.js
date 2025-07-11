@@ -65,6 +65,11 @@ import StudioWhatWeDoImgSeven from './StudioWhatWeDoImgSeven.webp';
 import StudioWhatWeDoImgEight from './StudioWhatWeDoImgEight.webp';
 import StudioWhatWeDoImgNine from './StudioWhatWeDoImgNine.webp';
 
+
+
+import StudioLeadershipTeamImgOne from './StudioLeadershipTeamOne.webp'
+
+
 export default {
     HomeHeroImgOne,
     HomeHeroImgTwo,
@@ -122,5 +127,7 @@ export default {
     StudioWhatWeDoImgSix,
     StudioWhatWeDoImgSeven,
     StudioWhatWeDoImgEight,
-    StudioWhatWeDoImgNine
+    StudioWhatWeDoImgNine,
+
+    StudioLeadershipTeamImgOne
 }
