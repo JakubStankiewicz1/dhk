@@ -3,6 +3,8 @@
     height: 100%;
 
     background-color: #000000;
+
+    padding-bottom: 100px;
 }
 
 .studioLeadershipTeamContainer {
@@ -41,43 +43,153 @@
 
 .studioLeadershipTeamContainerBottomContainerElement {
     width: 100%;
-    height: 100%;
+    height: auto;
+    /* transition: all 0.3s ease; */
+    cursor: pointer;
+    margin: 0;
+    line-height: 0;
+    position: relative;
 }
 
 .studioLeadershipTeamContainerBottomContainerElementCont {
     width: 97.4%;
     margin-left: auto;
     margin-right: auto;
-    height: 100%;
+    height: 32px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* transition: all 0.3s ease; */
+}
+
+.studioLeadershipTeamContainerBottomContainerElement:hover .studioLeadershipTeamContainerBottomContainerElementContLeftContainerImage {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transform: translateY(0);
+    transform-origin: top left;
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); */
+}
+
+.studioLeadershipTeamContainerBottomContainerElement:hover .studioLeadershipTeamContainerBottomContainerElementContLeftContainer {
+    z-index: 9999;
+}
+
+.studioLeadershipTeamContainerBottomContainerElement:hover {
+    z-index: 9999;
 }
 
 .studioLeadershipTeamContainerBottomContainerElementContLeft {
     display: flex;
     flex: 1;
+    flex-direction: row;
     /* background-color: red; */
 }
 
 .studioLeadershipTeamContainerBottomContainerElementContLeftContainer {
-    width: 29px;
-    height: 29px;
-    /* background-color: #ffffff; */
+    display: flex;
+    flex: 1;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContTwo {
+    display: flex;
+    flex: 1;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContTwoCont {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* transition: all 0.3s ease; */
+    /* gap: 2px; */
+    /* padding: 4px 8px; */
+    /* border-radius: 3px; */
+    gap: 25px;
+    height: 19px;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContTwoCont:hover {
+    background-color: #ffffff;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContTwoCont:hover .studioLeadershipTeamContainerBottomContainerElementContTwoContTwoText {
+    color: #000000;
+}
+
+.studioLeadershipTeamContainerBottomContainerElement:hover .studioLeadershipTeamContainerBottomContainerElementContTwoCont {
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    /* transform: scale(1.05); */
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContTwoContOneText,
+.studioLeadershipTeamContainerBottomContainerElementContTwoContTwoText,
+.studioLeadershipTeamContainerBottomContainerElementContTwoContThreeText {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContTwoContainerText {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #ffffff;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContLeftContainer {
+    width: 32px;
+    height: 32px;
+    overflow: visible;
+    /* transition: all 0.3s ease; */
+    position: relative;
+    z-index: 1;
 }
 
 .studioLeadershipTeamContainerBottomContainerElementContLeftContainerImage {
-    width: 100%;
-    height: 100%;
+    width: 32px;
+    height: 32px;
     object-fit: cover;
-    /* border-radius: 50%; */
+    /* transition: all 0.3s ease; */
+    position: relative;
+    z-index: 2;
 }
 
 .studioLeadershipTeamContainerBottomContainerElementContRight {
     display: flex;
     flex: 1;
+    justify-content: space-between;
+    align-items: center;
     /* background-color: blue; */
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContRightContainer {
+    display: flex;
+    flex: 1;
+}
+
+.studioLeadershipTeamContainerBottomContainerElementContRightTwo {
+    display: none;
+    opacity: 0;
+    /* transition: all 0.4s ease; */
+    margin-left: auto;
+    transform: translateX(20px);
+}
+
+.studioLeadershipTeamContainerBottomContainerElement:hover .studioLeadershipTeamContainerBottomContainerElementContRightTwo {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .studioLeadershipTeamContainerBottomContainerElementContRightContainerText {
@@ -86,12 +198,23 @@
     line-height: 29px;
     color: #333333;
     font-family: 'Helvetica Neue', sans-serif;
+    /* transition: all 0.3s ease; */
+}
+
+.studioLeadershipTeamContainerBottomContainerElement:hover .studioLeadershipTeamContainerBottomContainerElementContRightContainerText {
+    color: #ffffff;
+    /* transform: translateX(5px); */
 }
 
 .studioLeadershipTeamContainerBottomContainerElementContTwo {
     display: none;
+    opacity: 0;
+    /* transition: all 0.4s ease; */
+    transform: translateX(-20px);
 }
 
-.studioLeadershipTeamContainerBottomContainerElementContTwo {
-    display: none;
+.studioLeadershipTeamContainerBottomContainerElement:hover .studioLeadershipTeamContainerBottomContainerElementContTwo {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
 }

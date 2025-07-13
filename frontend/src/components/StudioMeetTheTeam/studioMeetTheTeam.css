@@ -1,0 +1,133 @@
+html, body {
+    scroll-behavior: smooth; /* For smoother vertical scrolling */
+    overscroll-behavior-y: none; /* Prevent overscroll bounce which can cause issues */
+}
+
+.studioMeetTheTeam {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
+    /* Make sure this section has a proper scroll position */
+    scroll-snap-align: start;
+    scroll-snap-stop: always; /* Force scroll to stop at this section */
+    will-change: transform;
+}
+
+.studioMeetTheTeamContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+    will-change: transform;
+}
+
+.studioMeetTheTeamContainerRightContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(152px, 1fr));
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-flow: column;
+    gap: 20px;
+    height: 100vh;
+    align-content: end;
+    align-items: end;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+    padding-right: 100px; /* Add padding to ensure we can see the right edge */
+    will-change: transform;
+}
+
+.studioMeetTheTeamContainerRight {
+    position: relative;
+    min-width: max-content;
+    overflow: visible;
+    width: auto;
+    margin-left: auto; /* Push to the right */
+}
+
+.studioMeetTheTeamContainerRightContainerElementContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.studioMeetTheTeamContainerRightContainerElementContainerRightContainerImageImg {
+    width: 152px;
+    height: 152px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    cursor: pointer;
+}
+
+.studioMeetTheTeamContainerRightContainerElementContainerRightContainerImageImg:hover {
+    filter: grayscale(0%);
+}
+
+.studioMeetTheTeamContainerRightContainerElementContainerRight {
+    width: 152px;
+    height: 152px;
+}
+
+.studioMeetTheTeamContainerRightContainerElementContainerLeft {
+    width: 152px;
+    height: 152px;
+    z-index: 1110;
+
+    position: absolute;
+
+    transform: translateX(-172px);
+
+    background-color: black;
+    /* opacity: 0; */
+    display: none;
+}
+
+.studioMeetTheTeamContainerRightContainerElementContainerLeftContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.studioMeetTheTeamContainerRightContainerElementContainer:hover .studioMeetTheTeamContainerRightContainerElementContainerLeft {
+    display: block;
+}
+
+
+.studioMeetTheTeamContainerLeftContainerText {
+    font-size: 62px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.studioMeetTheTeamContainerLeftContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(30px);
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    pointer-events: none; /* Let scroll events pass through */
+}
+
+.studioMeetTheTeamContainerRightContainerElementContainerLeftContainerTopContainerText {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.studioMeetTheTeamContainerRightContainerElementContainerLeftContainerBottomContainerText {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #808080;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
