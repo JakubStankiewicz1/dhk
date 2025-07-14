@@ -13,18 +13,42 @@ const StudioMeetTheTeam = () => {
     let isSectionActive = false;
     let initialRightPosition = 0;
     let lastScrollY = window.scrollY;
-    let scrollingUpInSection = false;
     
     // Calculate initial position
     const calculateInitialPosition = () => {
       if (rightContainer) {
-        // Set the initial position to show only the first column
+        // Get the total width of all elements
         const containerWidth = rightContainer.scrollWidth;
         const viewportWidth = window.innerWidth;
-        initialRightPosition = containerWidth - viewportWidth + 100; // Adjust as needed
         
-        // Set initial position with all content to the right
+        // Calculate the total number of columns
+        const totalColumns = Math.ceil(rightContainer.querySelectorAll('.studioMeetTheTeamContainerRightContainerElement').length / 4);
+        const columnWidth = 152 + 5; // Image width + gap (5px odstęp)
+        
+        // Update grid template for accurate column positioning
+        rightContainer.style.gridTemplateColumns = `repeat(${totalColumns}, 152px)`;
+        rightContainer.style.columnGap = '5px';
+        rightContainer.style.rowGap = '5px';
+        
+        // Calculate exact position to show just the first column
+        // Position element so only the first column is visible and aligned to the right edge of viewport
+        const titleOffset = document.querySelector('.studioMeetTheTeamContainerLeft')?.offsetWidth || 300;
+        const availableSpace = viewportWidth - titleOffset - 50; // 50px padding
+        const columnsToShow = 1; // Show exactly 1 column
+        const visibleWidth = columnsToShow * columnWidth;
+        
+        // Calculate how much to translate - ensure we see exactly one column initially
+        initialRightPosition = containerWidth - visibleWidth - titleOffset;
+        
+        // Ensure additional space at end for full scrolling (matching the extra padding we added)
+        const fullScrollPadding = 200;
+        document.documentElement.style.setProperty('--team-grid-scroll-padding', `${fullScrollPadding}px`);
+        
+        // Set initial position with just first column visible
         rightContainer.style.transform = `translateX(${initialRightPosition}px)`;
+        
+        // Update CSS variable to control how far left we can scroll
+        document.documentElement.style.setProperty('--team-grid-total-width', `${totalColumns * columnWidth + fullScrollPadding}px`);
       }
     };
     
@@ -49,17 +73,27 @@ const StudioMeetTheTeam = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // Section is in view
           isSectionActive = true;
-          isScrollingHorizontally = true;
-          document.body.style.overflow = 'hidden'; // Prevent vertical scroll
-        } else {
-          // Only deactivate if we're not scrolling up within the section
-          if (!scrollingUpInSection) {
-            isSectionActive = false;
+          
+          // Start horizontal scrolling only if we're not at the initial position
+          const currentTransform = rightContainer?.style.transform || '';
+          const currentX = currentTransform 
+            ? parseInt(currentTransform.replace('translateX(', '').replace('px)', '')) 
+            : initialRightPosition;
+            
+          if (currentX < initialRightPosition) {
+            isScrollingHorizontally = true;
+            document.body.style.overflow = 'hidden';
           }
+        } else {
+          // Section is out of view
+          isSectionActive = false;
+          isScrollingHorizontally = false;
+          document.body.style.overflow = '';
         }
       });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.2 }); // Trigger earlier
     
     if (section) {
       observer.observe(section);
@@ -67,31 +101,17 @@ const StudioMeetTheTeam = () => {
     
     // Capture scroll events to detect direction
     const handleScroll = () => {
+      // Only do special handling if section is active
+      if (!isSectionActive) return;
+      
       // Detect scroll direction
       const scrollDirection = window.scrollY > lastScrollY ? 'down' : 'up';
       
-      // If scrolling up and section is in view or just above
-      if (scrollDirection === 'up') {
-        const sectionRect = section.getBoundingClientRect();
-        const isSectionVisible = sectionRect.top <= window.innerHeight && sectionRect.bottom >= 0;
-        
-        if (isSectionVisible && shouldBlockScrollUp()) {
-          // We're scrolling up while the section is visible and grid not at initial position
-          scrollingUpInSection = true;
-          
-          // Force scroll position to stay at the section top
-          // This effectively blocks upward scrolling until horizontal scrolling completes
-          if (sectionRect.top < 10 && sectionRect.top > -10) {
-            window.scrollTo({
-              top: window.scrollY - sectionRect.top,
-              behavior: 'instant'
-            });
-          }
-        } else {
-          scrollingUpInSection = false;
-        }
-      } else {
-        scrollingUpInSection = false;
+      // If scrolling up and we're not at the initial right position
+      if (scrollDirection === 'up' && shouldBlockScrollUp()) {
+        // Force horizontal scrolling
+        isScrollingHorizontally = true;
+        document.body.style.overflow = 'hidden';
       }
       
       lastScrollY = window.scrollY;
@@ -99,22 +119,21 @@ const StudioMeetTheTeam = () => {
     
     // Handle wheel events
     const handleWheel = (e) => {
-      if (!isSectionActive) return;
+      // Skip if section is not active
+      if (!isSectionActive || !rightContainer) return;
       
       // Current position of the grid
-      const currentTransform = rightContainer?.style.transform || '';
+      const currentTransform = rightContainer.style.transform || '';
       const currentX = currentTransform 
         ? parseInt(currentTransform.replace('translateX(', '').replace('px)', '')) 
         : initialRightPosition;
       
       // When scrolling up and the section is active
-      if (e.deltaY < 0 && isSectionActive) {
+      if (e.deltaY < 0) {
         // If the grid is not in its rightmost position (initial position),
         // we need to move it back to the right first before allowing vertical scroll
         if (currentX < initialRightPosition) {
           e.preventDefault();
-          document.body.style.overflow = 'hidden'; // Prevent vertical scroll
-          isScrollingHorizontally = true;
           
           // Calculate new position (moving right when scrolling up)
           let newX = currentX - e.deltaY; // e.deltaY is negative when scrolling up
@@ -128,59 +147,66 @@ const StudioMeetTheTeam = () => {
             // Only now allow vertical scrolling to continue
             isScrollingHorizontally = false;
             document.body.style.overflow = '';
+          } else {
+            // Still scrolling horizontally
+            isScrollingHorizontally = true;
+            document.body.style.overflow = 'hidden';
           }
-          
-          return; // Exit here, don't process further
-        }
-      }
-      
-      // For scrolling down or other cases when horizontal scrolling is active
-      if (isScrollingHorizontally && rightContainer) {
-        e.preventDefault();
-        
-        // Calculate new position for scrolling down (moving left)
-        let newX = currentX - e.deltaY;
-        
-        // Limits for scrolling
-        const minX = 0; // Fully scrolled to the left
-        const maxX = initialRightPosition; // Starting position (right)
-        
-        newX = Math.max(minX, Math.min(maxX, newX));
-        
-        // Apply new position
-        rightContainer.style.transform = `translateX(${newX}px)`;
-        
-        // Check if we reached the left limit when scrolling down
-        if (newX === minX && e.deltaY > 0) {
-          // We've scrolled all the way left and trying to scroll more down
+        } else {
+          // We're at the rightmost position, allow normal vertical scrolling
           isScrollingHorizontally = false;
-          document.body.style.overflow = ''; // Enable vertical scrolling again
+          document.body.style.overflow = '';
+        }
+      } 
+      // When scrolling down
+      else if (e.deltaY > 0) {
+        // Always engage horizontal scrolling first when starting to scroll down in this section
+        if (currentX >= initialRightPosition) {
+          // We're at the initial position (showing just the first column)
+          isScrollingHorizontally = true;
+          document.body.style.overflow = 'hidden';
+        }
+        
+        if (isScrollingHorizontally) {
+          e.preventDefault();
           
-          // Let a small delay before enabling vertical scroll
-          setTimeout(() => {
-            window.scrollBy(0, 1); // Tiny scroll to continue natural movement
-          }, 50);
+          // Calculate new position for scrolling down (moving left)
+          let newX = currentX - e.deltaY;
+          
+          // Get total grid width to calculate limits
+          const containerWidth = rightContainer.scrollWidth;
+          const viewportWidth = window.innerWidth;
+          const titleWidth = document.querySelector('.studioMeetTheTeamContainerLeft')?.offsetWidth || 300;
+          
+          // Calculate the absolute left limit (when all columns are visible)
+          // Subtract additional space to ensure we can see all team members completely
+          // Add more buffer to ensure full scrolling to the last column
+          const minX = -(containerWidth - viewportWidth + 300);
+          const maxX = initialRightPosition; // Starting position (right)
+          
+          newX = Math.max(minX, Math.min(maxX, newX));
+          
+          // Apply new position
+          rightContainer.style.transform = `translateX(${newX}px)`;
+          
+          // Check if we reached the left limit when scrolling down
+          if (newX <= minX) {
+            // We've scrolled all the way left (all photos are now visible)
+            isScrollingHorizontally = false;
+            document.body.style.overflow = '';
+            
+            // Let a small delay before enabling vertical scroll
+            setTimeout(() => {
+              window.scrollBy(0, 1); // Tiny scroll to continue natural movement
+            }, 50);
+          }
         }
       }
     };
     
     // Add event listeners
     window.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('scroll', handleScroll, { passive: false });
-    
-    // Create a passive scroll event to ensure we can detect scrolling up even when blocked
-    let scrollTimeout;
-    const passiveScrollMonitor = () => {
-      if (isSectionActive && shouldBlockScrollUp()) {
-        // If we're trying to scroll up while grid is not at initial position,
-        // ensure horizontal scrolling is re-engaged
-        isScrollingHorizontally = true;
-        document.body.style.overflow = 'hidden';
-      }
-      
-      scrollTimeout = setTimeout(passiveScrollMonitor, 100);
-    };
-    passiveScrollMonitor();
+    window.addEventListener('scroll', handleScroll);
     
     return () => {
       window.removeEventListener('wheel', handleWheel);
@@ -188,7 +214,6 @@ const StudioMeetTheTeam = () => {
       window.removeEventListener('resize', calculateInitialPosition);
       observer.disconnect();
       document.body.style.overflow = ''; // Reset overflow on unmount
-      clearTimeout(scrollTimeout);
     };
   }, []);
   
@@ -198,9 +223,7 @@ const StudioMeetTheTeam = () => {
         {/* Left Part */}
         <div className="studioMeetTheTeamContainerLeft">
           <div className="studioMeetTheTeamContainerLeftContainer">
-            <p className="studioMeetTheTeamContainerLeftContainerText">
-              meet the team
-            </p>
+            <div className="studioMeetTheTeamContainerLeftContainerText">meet the team</div>
           </div>
         </div>
 

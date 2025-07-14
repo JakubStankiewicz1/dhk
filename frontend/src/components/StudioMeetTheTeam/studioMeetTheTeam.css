@@ -1,3 +1,8 @@
+:root {
+    --team-grid-total-width: 2000px; /* Default value, will be updated by JS */
+    --team-grid-scroll-padding: 200px; /* Extra padding to ensure we can scroll to see all items */
+}
+
 html, body {
     scroll-behavior: smooth; /* For smoother vertical scrolling */
     overscroll-behavior-y: none; /* Prevent overscroll bounce which can cause issues */
@@ -9,48 +14,66 @@ html, body {
     background-color: #000000;
     position: relative;
     overflow: hidden;
-    /* Make sure this section has a proper scroll position */
     scroll-snap-align: start;
-    scroll-snap-stop: always; /* Force scroll to stop at this section */
     will-change: transform;
 }
 
 .studioMeetTheTeamContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align content to the start */
     height: 100vh;
     position: relative;
     width: 100%;
     will-change: transform;
+    overflow: hidden; /* Prevent any horizontal overflow */
 }
 
 .studioMeetTheTeamContainerRightContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(152px, 1fr));
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, 152px);
+    grid-template-rows: repeat(4, 152px); /* Dokładna wysokość każdego wiersza */
     grid-auto-flow: column;
-    gap: 20px;
+    gap: 5px; /* Zmniejszony odstęp z 20px do 5px */
+    column-gap: 5px; /* Dokładne określenie odstępu poziomego */
+    row-gap: 5px; /* Dokładne określenie odstępu pionowego */
     height: 100vh;
     align-content: end;
     align-items: end;
+    justify-items: center; /* Wyśrodkowanie w poziomie */
     transform: translateX(0);
-    transition: transform 0.3s ease-out;
-    padding-right: 100px; /* Add padding to ensure we can see the right edge */
+    transition: transform 0.2s ease-out;
+    padding-right: 200px; /* Zwiększony padding, aby pomieścić wszystkie zdjęcia */
+    padding-left: 20px; /* Dodaje trochę przestrzeni po lewej */
     will-change: transform;
+    padding-bottom: 20px; /* Dodaje trochę przestrzeni na dole */
 }
 
 .studioMeetTheTeamContainerRight {
     position: relative;
-    min-width: max-content;
+    min-width: var(--team-grid-total-width);
     overflow: visible;
     width: auto;
-    margin-left: auto; /* Push to the right */
+    margin-left: 0; /* Don't push all the way to the right */
+    padding: 0; /* Usunięcie domyślnego paddingu */
+    justify-self: flex-end; /* Align to the right edge */
+}
+
+.studioMeetTheTeamContainerRightContainerElement {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 152px;
+    height: 152px;
+    overflow: hidden;
 }
 
 .studioMeetTheTeamContainerRightContainerElementContainer {
     display: flex;
     flex-direction: row;
+    margin: 0; /* Usunięcie domyślnych marginesów */
+    padding: 0; /* Usunięcie domyślnego paddingu */
+    height: 152px;
 }
 
 .studioMeetTheTeamContainerRightContainerElementContainerRightContainerImageImg {
@@ -59,6 +82,8 @@ html, body {
     filter: grayscale(100%);
     transition: filter 0.3s ease;
     cursor: pointer;
+    display: block; /* Zapewnia dokładne wymiary bez dodatkowych marginesów */
+    object-fit: cover; /* Zapewnia, że obrazy wypełnią dokładnie wyznaczoną przestrzeń */
 }
 
 .studioMeetTheTeamContainerRightContainerElementContainerRightContainerImageImg:hover {
@@ -98,9 +123,13 @@ html, body {
 .studioMeetTheTeamContainerLeftContainerText {
     font-size: 62px;
     font-weight: 600;
-    line-height: 22px;
+    line-height: 62px;
     color: #ffffff;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    white-space: nowrap; /* Prevent text from wrapping */
+    display: inline-block; /* Keep text in one line */
+    text-align: left;
+    transform: rotate(0deg); /* Ensure no rotation */
 }
 
 .studioMeetTheTeamContainerLeftContainer {
@@ -108,12 +137,14 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    transform: translateX(30px);
+    align-items: flex-start;
+    transform: translateX(30px) rotate(0deg); /* Ensure no rotation */
     position: sticky;
     left: 0;
     z-index: 10;
     pointer-events: none; /* Let scroll events pass through */
+    width: 300px; /* Fixed width to ensure consistent spacing */
+    padding-left: 40px; /* Add left padding for better text positioning */
 }
 
 .studioMeetTheTeamContainerRightContainerElementContainerLeftContainerTopContainerText {
