@@ -89,6 +89,7 @@
     object-fit: cover;
 }
 
+
 .homeStoryContainerTextContainerLeftButtonTextOne,
 .homeStoryContainerTextContainerLeftButtonTextTwo,
 .homeStoryContainerTextContainerLeftButtonTextThree,
@@ -130,6 +131,17 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
+
+    /* background-color: red; */
+    cursor: pointer;
+}
+
+.homeStoryContainerTextContainerLeftButton:hover {
+    background-color: #ffffff;
+}
+
+.homeStoryContainerTextContainerLeftButton:hover .homeStoryContainerTextContainerLeftButtonTextTwo {
+    color: #000000;
 }
 
 .homeStoryContainerTextContainerLeftButtonTextTwo {
