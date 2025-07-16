@@ -72,6 +72,8 @@ import StudioLeadershipTeamImgOne from './StudioLeadershipTeamOne.webp'
 
 import StudioMeetTheTeamOne from './StudioMeetTheTeamOne.webp'
 
+import HomeJournalElementOne from './HomeJournalElementOne.jpg';
+
 export default {
     HomeHeroImgOne,
     HomeHeroImgTwo,
@@ -133,5 +135,7 @@ export default {
 
     StudioLeadershipTeamImgOne,
 
-    StudioMeetTheTeamOne
+    StudioMeetTheTeamOne,
+
+    HomeJournalElementOne
 }

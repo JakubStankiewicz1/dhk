@@ -110,15 +110,18 @@
 }
 
 .menuContainerMiddleContainerLeft,
-.menuContainerMiddleContainerMiddle,
-.menuContainerMiddleContainerRight {
+.menuContainerMiddleContainerMiddle {
     display: flex;
     flex: 1;
     width: 100%;
     height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .menuContainerMiddleContainerRight {
+    display: flex;
+    flex: 1;
     width: 100%;
     height: 100%;
 }
@@ -132,12 +135,17 @@
 }
 
 .menuContainerMiddleContainerMiddleContainer {
-    width: 100%;
-    height: 100%;
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 20px;
+    width: fit-content;
+    height: fit-content;
+    /* padding: 12px 24px; */
+    /* border-radius: 6px; */
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .menuContainerMiddleContainerMiddleContainerOneContainerText,
@@ -150,6 +158,14 @@
     font-family: 'Helvetica Now Display', sans-serif;
 }
 
+.menuContainerMiddleContainerRightContainerOneContainer,
+.menuContainerMiddleContainerRightContainerTwoContainer,
+.menuContainerMiddleContainerRightContainerThreeContainer,
+.menuContainerMiddleContainerRightContainerFourContainer,
+.menuContainerMiddleContainerRightContainerFiveContainer {
+    cursor: pointer;
+}
+
 .menuContainerMiddleContainerRightContainerOneContainerText,
 .menuContainerMiddleContainerRightContainerTwoContainerText,
 .menuContainerMiddleContainerRightContainerThreeContainerText,
@@ -160,6 +176,22 @@
     font-weight: 800;
     line-height: 19px;
     font-family: 'Helvetica Now Display', sans-serif;
+}
+/* 
+.menuContainerMiddleContainerRightContainerOneContainer:hover .menuContainerMiddleContainerRightContainerOneContainerText,
+.menuContainerMiddleContainerRightContainerTwoContainer:hover .menuContainerMiddleContainerRightContainerTwoContainerText,
+.menuContainerMiddleContainerRightContainerThreeContainer:hover .menuContainerMiddleContainerRightContainerThreeContainerText
+.menuContainerMiddleContainerRightContainerFourContainer:hover .menuContainerMiddleContainerRightContainerFourContainerText,
+.menuContainerMiddleContainerRightContainerFiveContainer:hover .menuContainerMiddleContainerRightContainerFiveContainerText{
+    color: #ffffff;
+} */
+
+.menuContainerMiddleContainerRightContainerOneContainerText:hover,
+.menuContainerMiddleContainerRightContainerTwoContainerText:hover,
+.menuContainerMiddleContainerRightContainerThreeContainerText:hover,
+.menuContainerMiddleContainerRightContainerFourContainerText:hover,
+.menuContainerMiddleContainerRightContainerFiveContainerText:hover {
+    color: #ffffff;
 }
 
 .menuContainerMiddleContainerLeftContainerOneContainerText {
@@ -206,6 +238,14 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
+
+    /* background-color: red; */
+}
+
+.menuContainerMiddleContainerLeftContainerFourContainerButton:hover .menuContainerMiddleContainerLeftContainerFourContainerButtonOneContainerText,
+.menuContainerMiddleContainerLeftContainerFourContainerButton:hover .menuContainerMiddleContainerLeftContainerFourContainerButtonTwoContainerText,
+.menuContainerMiddleContainerLeftContainerFourContainerButton:hover .menuContainerMiddleContainerLeftContainerFourContainerButtonThreeContainerText {
+    color: #ffffff;
 }
 
 .menuContainerMiddleContainerLeftContainerFourContainerButtonOneContainerText,
@@ -225,7 +265,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 10px;
+    gap: 2px;
 }
 
 .menuContainerBottom {
@@ -384,3 +424,18 @@
 .menuContainer:has(.menuContainerTopContainerLeftContainerFour:hover) .menuContainerBottomContainerLeftContainerFour {
     opacity: 1;
 }
+
+/* Hover effect for contact us button */
+.menuContainerMiddleContainerMiddleContainer:hover {
+    background-color: #ffffff;
+}
+
+.menuContainerMiddleContainerMiddleContainer:hover .menuContainerMiddleContainerMiddleContainerTwoContainerText {
+    color: #000000;
+}
+
+/* .menuContainerMiddleContainerMiddleContainer:hover .menuContainerMiddleContainerMiddleContainerOneContainerText,
+.menuContainerMiddleContainerMiddleContainer:hover .menuContainerMiddleContainerMiddleContainerTwoContainerText,
+.menuContainerMiddleContainerMiddleContainer:hover .menuContainerMiddleContainerMiddleContainerThreeContainerText {
+    color: #ffffff;
+} */

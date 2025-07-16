@@ -118,7 +118,7 @@
 }
 
 .homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainer {
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -126,8 +126,27 @@
     align-items: center;
     cursor: pointer;
     gap: 5px;
+    
 
     /* background-color: red; */
+}
+
+.homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+
+}
+
+.homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerDiv:hover {
+    background-color: #ffffff;
+}
+
+.homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerDiv:hover .homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerTwoContainerText {
+    color: #000000
 }
 
 .homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerOneContainerText,

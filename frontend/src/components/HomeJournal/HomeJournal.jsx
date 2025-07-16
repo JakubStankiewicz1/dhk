@@ -59,7 +59,9 @@ const HomeJournal = () => {
                             <div className="homeJournalContainerBottomContainerBottomContainerThree">
                                 <div className="homeJournalContainerBottomContainerBottomContainerThreeContainer">
                                     <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButton">
+
                                         <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainer">
+                                            <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerDiv">    
                                             <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerOne">
                                                 <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerOneContainer">
                                                     <p className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerOneContainerText">
@@ -83,6 +85,12 @@ const HomeJournal = () => {
                                                     </p>
                                                 </div>
                                             </div>
+
+                                            </div>
+
+
+
+
                                         </div>
                                     </div>
                                 </div>

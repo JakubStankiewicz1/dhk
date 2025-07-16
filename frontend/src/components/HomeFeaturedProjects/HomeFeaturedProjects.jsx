@@ -39,23 +39,23 @@ const HomeFeaturedProjects = () => {
                                 <div className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainer">
                                     <div className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButton">
 
-                                    <div className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonOne">
-                                        <p className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonOneText">
-                                            [
-                                        </p>
-                                    </div>
+                                        <div className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonOne">
+                                            <p className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonOneText">
+                                                [
+                                            </p>
+                                        </div>
 
-                                    <div className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonTwo">
-                                        <p className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonTwoText">
-                                            view all projects
-                                        </p>
-                                    </div>
+                                        <div className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonTwo">
+                                            <p className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonTwoText">
+                                                view all projects
+                                            </p>
+                                        </div>
 
-                                    <div className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonThree">
-                                        <p className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonThreeText">
-                                            ]
-                                        </p>
-                                    </div>
+                                        <div className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonThree">
+                                            <p className="homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonThreeText">
+                                                ]
+                                            </p>
+                                        </div>
 
                                     </div>
                                 </div>

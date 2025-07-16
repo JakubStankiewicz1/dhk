@@ -10,10 +10,20 @@ const JournalNavbar = () => {
             <div className="journalNavbarContainerLeft">
                 <div className="journalNavbarContainerLeftContainer">
                     <div className="journalNavbarContainerLeftContainerOne">
+                        <div className="journalNavbarContainerLeftContainerOneDiv">
                         <div className="journalNavbarContainerLeftContainerOneContainer">
                             <p className="journalNavbarContainerLeftContainerOneContainerText">
                                 home
                             </p>
+                        </div>
+
+                        <div className="journalNavbarContainerLeftContainerOneHover">
+                            <div className="journalNavbarContainerLeftContainerOneHoverCont">
+                                <p className="journalNavbarContainerLeftContainerOneHoverContText">
+                                    dhk
+                                </p>
+                            </div>
+                        </div>
                         </div>
                     </div>
 
@@ -47,6 +57,14 @@ const JournalNavbar = () => {
                                         all articles
                                     </p>
                                 </div>
+
+                                <div className="journalNavbarContainerLeftContainerTwoContainerRightHover">
+                                    <div className="journalNavbarContainerLeftContainerTwoContainerRightHoverCont">
+                                        <p className="journalNavbarContainerLeftContainerTwoContainerRightHoverContText">
+                                            news
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -59,6 +77,14 @@ const JournalNavbar = () => {
                                         projects,
                                     </p>
                                 </div>
+
+                                <div className="journalNavbarContainerLeftContainerThreeContainerOneHover">
+                                    <div className="journalNavbarContainerLeftContainerThreeContainerOneHoverCont">
+                                        <p className="journalNavbarContainerLeftContainerThreeContainerOneHoverContText">
+                                            portfolio
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
 
                             <div className="journalNavbarContainerLeftContainerThreeContainerTwo">
@@ -66,6 +92,14 @@ const JournalNavbar = () => {
                                     <p className="journalNavbarContainerLeftContainerThreeContainerTwoContainerText">
                                         studio,
                                     </p>
+                                </div>
+
+                                <div className="journalNavbarContainerLeftContainerThreeContainerTwoHover">
+                                    <div className="journalNavbarContainerLeftContainerThreeContainerTwoHoverCont">
+                                        <p className="journalNavbarContainerLeftContainerThreeContainerTwoHoverContText">
+                                            team
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -93,6 +127,14 @@ const JournalNavbar = () => {
                     <p className="journalNavbarContainerRightContainerText">
                         menu
                     </p>
+                </div>
+
+                <div className="journalNavbarContainerRightHover">
+                    <div className="journalNavbarContainerRightHoverCont">
+                        <p className="journalNavbarContainerRightHoverContText">
+                            nav
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

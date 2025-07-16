@@ -1,33 +1,41 @@
 .journalNavbar {
     width: 100%;
-    height: 100%;
-
-    position: fixed;
+    height: 60px;
+    position: sticky;
     top: 0;
-
-    /* height: 50px; */
-    /* background-color: #FFFFFF; */
+    left: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    color: black;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.04); */
 }
 
 .journalNavbarContainer {
-    width: 98%;
+    width: 100%;
+    /* max-width: 1200px; */
     margin-left: auto;
     margin-right: auto;
     height: 100%;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* align-items: center; */
-    padding-top: 10px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.journalNavbarContainerLeft {
+    /* background-color: red; */
+    width: 100%;
 }
 
 .journalNavbarContainerLeftContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 270px;
+    justify-content: space-between;
+    width: 78%;
+    margin-right: auto;
 }
 
 .journalNavbarContainerLeftContainerTwoContainer {
@@ -35,7 +43,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 6px;
+    cursor: pointer;
+    padding: 8px 12px;
+    /* border-radius: 4px; */
+    /* transition: all 0.2s ease; */
+}
+
+.journalNavbarContainerLeftContainerTwoContainer:hover {
+    /* background-color: rgba(0, 0, 0, 0.02); */
 }
 
 .journalNavbarContainerLeftContainerTwoContainerLeftContainer {
@@ -51,7 +67,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .journalNavbarContainerLeftContainerOneContainerText,
@@ -63,17 +79,17 @@
 .journalNavbarContainerLeftContainerThreeContainerThreeContainerOneText,
 .journalNavbarContainerRightContainerText {
     font-size: 16px;
-    font-weight: 800;
-    line-height: 22px;
+    font-weight: 740;
+    line-height: 20px;
     color: #000000;
-    /* text-decoration: none; */
     font-family: 'Helvetica Now Display', sans-serif;
+    margin: 0;
 }
 
 .journalNavbarContainerLeftContainerTwoContainerLeftContainerTwoContainerIcon {
-    width: 18px;
-    height: 18px;
-    /* font-weight: 800; */
+    width: 16px;
+    height: 16px;
+    color: #000000;
 }
 
 .journalNavbarContainerLeftContainerThreeContainerThreeContainer {
@@ -81,12 +97,128 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    transform: translateY(8.6px);
+    gap: 4px;
 }
 
 .journalNavbarContainerLeftContainerThreeContainerThreeContainerTwoDiv {
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     background-color: #000000;
+    /* border-radius: 50%; */
+    transform: translateY(12px);
+}
+
+/* Add position relative to containers for hover positioning */
+.journalNavbarContainerLeftContainerOne,
+.journalNavbarContainerLeftContainerTwoContainerRight,
+.journalNavbarContainerLeftContainerThreeContainerOne,
+.journalNavbarContainerLeftContainerThreeContainerTwo,
+.journalNavbarContainerRight {
+    position: relative;
+}
+
+/* Hover elements styling */
+.journalNavbarContainerLeftContainerOneHover,
+.journalNavbarContainerLeftContainerTwoContainerRightHover,
+.journalNavbarContainerLeftContainerThreeContainerOneHover,
+.journalNavbarContainerLeftContainerThreeContainerTwoHover,
+.journalNavbarContainerRightHover {
+    width: 130px;
+    height: 130px;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translateX(-50%); */
+    color: white;
+    display: none;
+    /* border-radius: 8px; */
+    z-index: 1001;
+    /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24); */
+    opacity: 0;
+    transform: translateY(-12px) translateX(-20px);
+    /* transition: all 0.3s ease; */
+}
+
+.journalNavbarContainerLeftContainerOneHoverCont,
+.journalNavbarContainerLeftContainerTwoContainerRightHoverCont,
+.journalNavbarContainerLeftContainerThreeContainerOneHoverCont,
+.journalNavbarContainerLeftContainerThreeContainerTwoHoverCont,
+.journalNavbarContainerRightHoverCont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.journalNavbarContainerLeftContainerOneHoverContText,
+.journalNavbarContainerLeftContainerTwoContainerRightHoverContText,
+.journalNavbarContainerLeftContainerThreeContainerOneHoverContText,
+.journalNavbarContainerLeftContainerThreeContainerTwoHoverContText,
+.journalNavbarContainerRightHoverContText {
+    font-size: 20px;
+    font-family: 'Helvetica Now Display', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.journalNavbarContainerLeftContainerOneDiv:hover .journalNavbarContainerLeftContainerOneHover {
+    display: block;
+    opacity: 1;
+    /* animation: fadeInUp 0.4s ease; */
+}
+/* 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+} */
+
+
+.journalNavbarContainerLeftContainerOne,
+.journalNavbarContainerLeftContainerTwo,
+.journalNavbarContainerLeftContainerThree {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.journalNavbarContainerLeftContainerOne:hover,
+.journalNavbarContainerLeftContainerThreeContainerOne:hover,
+.journalNavbarContainerLeftContainerThreeContainerTwo:hover,
+.journalNavbarContainerRight:hover {
+    cursor: pointer;
+}
+
+.journalNavbarContainerLeftContainerOneContainer,
+.journalNavbarContainerLeftContainerThreeContainerOneContainer,
+.journalNavbarContainerLeftContainerThreeContainerTwoContainer,
+.journalNavbarContainerRightContainer {
+    /* padding: 8px 12px; */
+    /* border-radius: 4px; */
+    /* transition: all 0.2s ease; */
+}
+
+/* .journalNavbarContainerLeftContainerOne:hover .journalNavbarContainerLeftContainerOneContainer,
+.journalNavbarContainerLeftContainerThreeContainerOne:hover .journalNavbarContainerLeftContainerThreeContainerOneContainer,
+.journalNavbarContainerLeftContainerThreeContainerTwo:hover .journalNavbarContainerLeftContainerThreeContainerTwoContainer,
+.journalNavbarContainerRight:hover .journalNavbarContainerRightContainer {
+    background-color: rgba(0, 0, 0, 0.02);
+} */
+
+.journalNavbarContainerLeftContainerThreeContainerThree {
+    transform: translateY(4px);
+}
+
+.journalNavbarContainerLeftContainerOneDiv {
+    background-color: red;
 }

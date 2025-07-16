@@ -215,18 +215,31 @@
     width: 100%;
     height: 100%;
     padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .homeAwardsContainerRightContainerBottomContainerButtonContainer {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
-
     justify-content: center;
     align-items: center;
     gap: 20px;
-
+    /* padding: 12px 24px; */
+    /* border-radius: 6px; */
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin: 0 auto;
 }
 
+.homeAwardsContainerRightContainerBottomContainerButtonContainer:hover {
+    background-color: #ffffff;
+}
+
+.homeAwardsContainerRightContainerBottomContainerButtonContainer:hover .homeAwardsContainerRightContainerBottomContainerButtonContainerTwoText {
+    color: #000000;
+}
 
 .homeAwardsContainerRightContainerBottomContainerButtonContainerOneText,
 .homeAwardsContainerRightContainerBottomContainerButtonContainerTwoText,
@@ -245,22 +258,3 @@
     font-family: 'Helvetica Now Display', sans-serif;
     color: #ffffff;
 }
-
-/* Load More Button Styles */
-/* .homeAwardsContainerRightContainerBottomContainerButtonContainer:hover {
-    transform: translateY(-2px);
-} */
-
-.homeAwardsContainerRightContainerBottomContainerButtonContainer:hover .homeAwardsContainerRightContainerBottomContainerButtonContainerTwoText {
-    color: #cccccc;
-}
-
-.homeAwardsContainerRightContainerBottomContainerButtonContainer:hover .homeAwardsContainerRightContainerBottomContainerButtonContainerOneText,
-.homeAwardsContainerRightContainerBottomContainerButtonContainer:hover .homeAwardsContainerRightContainerBottomContainerButtonContainerThreeText {
-    color: #cccccc;
-}
-
-.homeAwardsContainerRightContainerBottomContainerButtonContainer {
-    /* transition: all 0.3s ease; */
-}
-

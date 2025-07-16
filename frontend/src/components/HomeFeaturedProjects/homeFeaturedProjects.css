@@ -91,6 +91,14 @@
     cursor: pointer;
 }
 
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButton:hover {
+    background-color: #ffffff;
+}
+
+.homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButton:hover .homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonTwoText {
+    color: #000000;
+}
+
 .homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonOneText,
 .homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonTwoText,
 .homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonThreeText {

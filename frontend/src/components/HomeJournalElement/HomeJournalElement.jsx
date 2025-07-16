@@ -1,5 +1,6 @@
 import React from 'react';
 import './homeJournalElement.css';
+import assets from '../../assets/assets';
 
 const HomeJournalElement = () => {
   return (
@@ -9,15 +10,7 @@ const HomeJournalElement = () => {
             <div className="homeJournalElementContainerTop">
                 <div className="homeJournalElementContainerTopContainer">
                     <div className="homeJournalElementContainerTopContainerContent">
-                        {/* <div className="azaLogo">
-                            <div className="azaLogoLetter azaA">A</div>
-                            <div className="azaLogoBottom">
-                                <span className="azaZA">ZA</span>
-                                <div className="azaMeets">MEETS</div>
-                                <div className="azaYear">2025</div>
-                            </div>
-                        </div>
-                        <div className="viewArticleButton">[view article]</div> */}
+                        <img src={assets.HomeJournalElementOne} alt="" className='homeJournalElementContainerTopContainerContentImg' />
                     </div>
                 </div>
             </div>
