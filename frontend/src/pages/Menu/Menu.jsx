@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './menu.css';
 import assets from '../../assets/assets';
+import { NavLink } from 'react-router';
 
 const Menu = () => {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+
+  // Funkcja do ustawienia kursora na początku inputu
+  const handleInputFocus = (event) => {
+    // Małe opóźnienie żeby React zaktualizował DOM
+    setTimeout(() => {
+      event.target.setSelectionRange(0, 0);
+    }, 0);
+  };
   return (
     <div className='menu'>
         <div className="menuContainer">
@@ -13,35 +24,35 @@ const Menu = () => {
                     <div className="menuContainerTopContainerLeft">
                         <div className="menuContainerTopContainerLeftContainer">
                             <div className="menuContainerTopContainerLeftContainerOne">
-                                <div className="menuContainerTopContainerLeftContainerOneContainer">
+                                <NavLink to="/" className="menuContainerTopContainerLeftContainerOneContainer">
                                     <p className="menuContainerTopContainerLeftContainerOneContainerText">
                                         home,
                                     </p>
-                                </div>
+                                </NavLink>
                             </div>
 
                             <div className="menuContainerTopContainerLeftContainerTwo">
-                                <div className="menuContainerTopContainerLeftContainerTwoContainer">
+                                <NavLink to="/projects" className="menuContainerTopContainerLeftContainerTwoContainer">
                                     <p className="menuContainerTopContainerLeftContainerTwoContainerText">
                                         projects,
                                     </p>
-                                </div>
+                                </NavLink>
                             </div>
 
                             <div className="menuContainerTopContainerLeftContainerThree">
-                                <div className="menuContainerTopContainerLeftContainerThreeContainer">
+                                <NavLink to="/studio" className="menuContainerTopContainerLeftContainerThreeContainer">
                                     <p className="menuContainerTopContainerLeftContainerThreeContainerText">
                                         studio,
                                     </p>
-                                </div>
+                                </NavLink>
                             </div>
 
                             <div className="menuContainerTopContainerLeftContainerFour">
-                                <div className="menuContainerTopContainerLeftContainerFourContainer">
+                                <NavLink to="/journal" className="menuContainerTopContainerLeftContainerFourContainer">
                                     <p className="menuContainerTopContainerLeftContainerFourContainerText">
                                         journal
                                     </p>
-                                </div>
+                                </NavLink>
                             </div>
                         </div>
                     </div>
@@ -87,13 +98,47 @@ const Menu = () => {
 
                             <div className="menuContainerMiddleContainerLeftContainerTwo">
                                 <div className="menuContainerMiddleContainerLeftContainerTwoContainer">
-                                    <input type="text" placeholder='full name' className='menuContainerMiddleContainerLeftContainerTwoContainerInput' />
+                                    <div className="menuContainerMiddleContainerLeftContainerTwoContainerInputWrapper">
+                                        {fullName && (
+                                            <div className="menuContainerMiddleContainerLeftContainerTwoContainerInputIndicator">
+                                                <span className="menuContainerMiddleContainerLeftContainerTwoContainerInputIndicatorText">
+                                                    [x]
+                                                </span>
+                                            </div>
+                                        )}
+                                        <input 
+                                            type="text" 
+                                            placeholder='full name' 
+                                            className='menuContainerMiddleContainerLeftContainerTwoContainerInput'
+                                            value={fullName}
+                                            onChange={(e) => setFullName(e.target.value)}
+                                            onFocus={handleInputFocus}
+                                            onClick={handleInputFocus}
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="menuContainerMiddleContainerLeftContainerThree">
                                 <div className="menuContainerMiddleContainerLeftContainerThreeContainer">
-                                    <input type="text" placeholder='email address' className='menuContainerMiddleContainerLeftContainerThreeContainerInput' />
+                                    <div className="menuContainerMiddleContainerLeftContainerThreeContainerInputWrapper">
+                                        {email && (
+                                            <div className="menuContainerMiddleContainerLeftContainerThreeContainerInputIndicator">
+                                                <span className="menuContainerMiddleContainerLeftContainerThreeContainerInputIndicatorText">
+                                                    [x]
+                                                </span>
+                                            </div>
+                                        )}
+                                        <input 
+                                            type="text" 
+                                            placeholder='email address' 
+                                            className='menuContainerMiddleContainerLeftContainerThreeContainerInput'
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            onFocus={handleInputFocus}
+                                            onClick={handleInputFocus}
+                                        />
+                                    </div>
                                 </div>
                             </div>
 

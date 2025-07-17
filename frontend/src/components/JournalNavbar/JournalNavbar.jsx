@@ -1,6 +1,7 @@
 import React from 'react';
 import './journalNavbar.css';
 import { RiArrowDownSLine } from "react-icons/ri";
+import { NavLink } from 'react-router-dom';
 
 const JournalNavbar = () => {
   return (
@@ -123,19 +124,19 @@ const JournalNavbar = () => {
 
             {/* Right Part */}
             <div className="journalNavbarContainerRight">
-                <div className="journalNavbarContainerRightContainer">
+                <NavLink to="/menu" className="journalNavbarContainerRightContainer">
                     <p className="journalNavbarContainerRightContainerText">
                         menu
                     </p>
-                </div>
+                </NavLink>
 
-                <div className="journalNavbarContainerRightHover">
+                {/* <div className="journalNavbarContainerRightHover">
                     <div className="journalNavbarContainerRightHoverCont">
                         <p className="journalNavbarContainerRightHoverContText">
                             nav
                         </p>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     </div>

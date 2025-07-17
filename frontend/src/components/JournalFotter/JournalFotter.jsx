@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './journalFotter.css';
 
 const JournalFotter = () => {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+
+  // Funkcja do ustawienia kursora na początku inputu
+  const handleInputFocus = (event) => {
+    // Małe opóźnienie żeby React zaktualizował DOM
+    setTimeout(() => {
+      event.target.setSelectionRange(0, 0);
+    }, 0);
+  };
   return (
     <div className='journalFotter'>
         <div className="journalFotterContainer">
@@ -11,7 +21,7 @@ const JournalFotter = () => {
                     <div className="journalFotterContainerLeftContainerOne">
                         <div className="journalFotterContainerLeftContainerOneContainer">
                             <p className="journalFotterContainerLeftContainerOneContainerText">
-                                all rights reserved.dhk2025
+                                all rights reserved.dhk@2025
                             </p>
                         </div>
                     </div>
@@ -127,18 +137,53 @@ const JournalFotter = () => {
 
                             <div className="journalFotterContainerRightContainerThreeContainerTwo">
                                 <div className="journalFotterContainerRightContainerThreeContainerTwoContainer">
-                                    <input type="text" placeholder='full name' className='journalFotterContainerRightContainerThreeContainerTwoContainerInput' />
+                                    <div className="journalFotterContainerRightContainerThreeContainerTwoContainerInputWrapper">
+                                        {fullName && (
+                                            <div className="journalFotterContainerRightContainerThreeContainerTwoContainerInputIndicator">
+                                                <span className="journalFotterContainerRightContainerThreeContainerTwoContainerInputIndicatorText">
+                                                    [x]
+                                                </span>
+                                            </div>
+                                        )}
+                                        <input 
+                                            type="text" 
+                                            placeholder='full name' 
+                                            className='journalFotterContainerRightContainerThreeContainerTwoContainerInput'
+                                            value={fullName}
+                                            onChange={(e) => setFullName(e.target.value)}
+                                            onFocus={handleInputFocus}
+                                            onClick={handleInputFocus}
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="journalFotterContainerRightContainerThreeContainerThree">
                                 <div className="journalFotterContainerRightContainerThreeContainerThreeContainer">
-                                    <input type="text" placeholder='email address' className='journalFotterContainerRightContainerThreeContainerThreeContainerInput' />
+                                    <div className="journalFotterContainerRightContainerThreeContainerThreeContainerInputWrapper">
+                                        {email && (
+                                            <div className="journalFotterContainerRightContainerThreeContainerThreeContainerInputIndicator">
+                                                <span className="journalFotterContainerRightContainerThreeContainerThreeContainerInputIndicatorText">
+                                                    [x]
+                                                </span>
+                                            </div>
+                                        )}
+                                        <input 
+                                            type="text" 
+                                            placeholder='email address' 
+                                            className='journalFotterContainerRightContainerThreeContainerThreeContainerInput'
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            onFocus={handleInputFocus}
+                                            onClick={handleInputFocus}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                             
                             <div className="journalFotterContainerRightContainerThreeContainerFour">
                                 <div className="journalFotterContainerRightContainerThreeContainerFourContainer">
+                                    <div className="journalFotterContainerRightContainerThreeContainerFourContainerDiv">
                                     <div className="journalFotterContainerRightContainerThreeContainerFourContainerOne">
                                         <div className="journalFotterContainerRightContainerThreeContainerFourContainerOneContainer">
                                             <p className="journalFotterContainerRightContainerThreeContainerFourContainerOneContainerText">
@@ -161,6 +206,7 @@ const JournalFotter = () => {
                                                 ]
                                             </p>
                                         </div>
+                                    </div>
                                     </div>
                                 </div>
                             </div>
