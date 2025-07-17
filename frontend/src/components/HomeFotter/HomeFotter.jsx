@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './homeFotter.css';
 
 const HomeFotter = () => {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+
+  // Funkcja do ustawienia kursora na początku inputu
+  const handleInputFocus = (event) => {
+    // Małe opóźnienie żeby React zaktualizował DOM
+    setTimeout(() => {
+      event.target.setSelectionRange(0, 0);
+    }, 0);
+  };
+
   return (
     <div className='homeFotter'>
         <div className="homeFotterContainer">
@@ -127,39 +138,75 @@ const HomeFotter = () => {
 
                             <div className="homeFotterContainerRightContainerThreeContainerTwo">
                                 <div className="homeFotterContainerRightContainerThreeContainerTwoContainer">
-                                    <input type="text" placeholder='full name' className='homeFotterContainerRightContainerThreeContainerTwoContainerInput' />
+                                    <div className="homeFotterContainerRightContainerThreeContainerTwoContainerInputWrapper">
+                                        {fullName && (
+                                            <div className="homeFotterContainerRightContainerThreeContainerTwoContainerInputIndicator">
+                                                <span className="homeFotterContainerRightContainerThreeContainerTwoContainerInputIndicatorText">
+                                                    [x]
+                                                </span>
+                                            </div>
+                                        )}
+                                        <input 
+                                            type="text" 
+                                            placeholder='full name' 
+                                            className='homeFotterContainerRightContainerThreeContainerTwoContainerInput'
+                                            value={fullName}
+                                            onChange={(e) => setFullName(e.target.value)}
+                                            onFocus={handleInputFocus}
+                                            onClick={handleInputFocus}
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="homeFotterContainerRightContainerThreeContainerThree">
                                 <div className="homeFotterContainerRightContainerThreeContainerThreeContainer">
-                                    <input type="text" placeholder='email address' className='homeFotterContainerRightContainerThreeContainerThreeContainerInput' />
+                                    <div className="homeFotterContainerRightContainerThreeContainerThreeContainerInputWrapper">
+                                        {email && (
+                                            <div className="homeFotterContainerRightContainerThreeContainerThreeContainerInputIndicator">
+                                                <span className="homeFotterContainerRightContainerThreeContainerThreeContainerInputIndicatorText">
+                                                    [x]
+                                                </span>
+                                            </div>
+                                        )}
+                                        <input 
+                                            type="text" 
+                                            placeholder='email address' 
+                                            className='homeFotterContainerRightContainerThreeContainerThreeContainerInput'
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            onFocus={handleInputFocus}
+                                            onClick={handleInputFocus}
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
                             <div className="homeFotterContainerRightContainerThreeContainerFour">
                                 <div className="homeFotterContainerRightContainerThreeContainerFourContainer">
-                                    <div className="homeFotterContainerRightContainerThreeContainerFourContainerOne">
-                                        <div className="homeFotterContainerRightContainerThreeContainerFourContainerOneContainer">
-                                            <p className="homeFotterContainerRightContainerThreeContainerFourContainerOneContainerText">
-                                                [
-                                            </p>
+                                    <div className="homeFotterContainerRightContainerThreeContainerFourContainerDiv">
+                                        <div className="homeFotterContainerRightContainerThreeContainerFourContainerOne">
+                                            <div className="homeFotterContainerRightContainerThreeContainerFourContainerOneContainer">
+                                                <p className="homeFotterContainerRightContainerThreeContainerFourContainerOneContainerText">
+                                                    [
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div className="homeFotterContainerRightContainerThreeContainerFourContainerTwo">
-                                        <div className="homeFotterContainerRightContainerThreeContainerFourContainerTwoContainer">
-                                            <p className="homeFotterContainerRightContainerThreeContainerFourContainerTwoContainerText">
-                                                submit
-                                            </p>
+                                        <div className="homeFotterContainerRightContainerThreeContainerFourContainerTwo">
+                                            <div className="homeFotterContainerRightContainerThreeContainerFourContainerTwoContainer">
+                                                <p className="homeFotterContainerRightContainerThreeContainerFourContainerTwoContainerText">
+                                                    submit
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div className="homeFotterContainerRightContainerThreeContainerFourContainerFour">
-                                        <div className="homeFotterContainerRightContainerThreeContainerFourContainerFourContainer">
-                                            <p className="homeFotterContainerRightContainerThreeContainerFourContainerFourContainerText">
-                                                ]
-                                            </p>
+                                        <div className="homeFotterContainerRightContainerThreeContainerFourContainerFour">
+                                            <div className="homeFotterContainerRightContainerThreeContainerFourContainerFourContainer">
+                                                <p className="homeFotterContainerRightContainerThreeContainerFourContainerFourContainerText">
+                                                    ]
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
