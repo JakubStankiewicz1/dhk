@@ -57,21 +57,6 @@ const StudioProjects = () => {
         }
       }
 
-      // Reverse parallax effect for left side text
-    //   const leftText = document.querySelector('.studioProjectsLeftTextReverse');
-    //   if (leftText) {
-    //     if (scrollTop >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
-    //       const progress = (scrollTop - sectionTop) / sectionHeight;
-    //       const maxTranslate = sectionHeight * 0.25;
-    //       const translateY = -progress * maxTranslate; // Negative for reverse effect
-    //       leftText.style.transform = `translateY(${translateY}px)`;
-    //     } else if (scrollTop < sectionTop) {
-    //       leftText.style.transform = 'translateY(0px)';
-    //     } else {
-    //       const maxTranslate = sectionHeight * 0.25;
-    //       leftText.style.transform = `translateY(${-maxTranslate}px)`;
-    //     }
-    //   }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -104,13 +89,6 @@ const StudioProjects = () => {
                         </div>
                     </div>
 
-                    {/* <div className="studioProjectsContainerleftLeftContainerText studioProjectsLeftTextReverse">
-                        <div className="studioProjectsContainerleftLeftContainerTextContainer">
-                            <p className="studioProjectsContainerleftLeftContainerTextContainerText">
-                                Design dna
-                            </p>
-                        </div>
-                    </div> */}
                 </div>
             </div>
 
@@ -125,39 +103,6 @@ const StudioProjects = () => {
                         </div>
                     </div>
 
-                    {/* <div className="studioProjectsContainerRightContainerText studioProjectsRightTextParallax">
-                        <div className="studioProjectsContainerRightContainerTextContainer">
-                            <div className="studioProjectsContainerRightContainerTextContainerOne">
-                                <div className="studioProjectsContainerRightContainerTextContainerOneContainer">
-                                    <div className="studioProjectsContainerRightContainerTextContainerOneContainerOne">
-                                        <p className="studioProjectsContainerRightContainerTextContainerOneContainerOneText">
-                                            [
-                                        </p>
-                                    </div>
-
-                                    <div className="studioProjectsContainerRightContainerTextContainerOneContainerTwo">
-                                        <p className="studioProjectsContainerRightContainerTextContainerOneContainerTwoText">
-                                            our projects
-                                        </p>
-                                    </div>
-
-                                    <div className="studioProjectsContainerRightContainerTextContainerOneContainerThree">
-                                        <p className="studioProjectsContainerRightContainerTextContainerOneContainerThreeText">
-                                            ]
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="studioProjectsContainerRightContainerTextContainerTwo">
-                                <div className="studioProjectsContainerRightContainerTextContainerTwoContainer">
-                                    <p className="studioProjectsContainerRightContainerTextContainerTwoContainerText">
-                                        Our strength as a design-led studio arises from a unique blend of creative talent, technical capability, implementation expertise and commercial strategy. We have a collaborative mindset and a global outlook. We’re always exploring new possibilities in advanced technologies, materials and design forms. We’re committed to being involved from first sketch to final construction, adding value at every stage. Each design is intentionally integrated into its unique social, environmental, cultural and functional context with quiet confidence and understated flair.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </div>
@@ -165,7 +110,7 @@ const StudioProjects = () => {
 
         
         
-        {/* Bottom ? */}
+        {/* Bottom */}
         <div className="studioProjectsBtm">
             <div className="studioProjectsBtmContainer studioProjectsRightTextParallax">
                 <div className="studioProjectsBtmContainerLeft">

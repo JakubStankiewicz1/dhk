@@ -13,6 +13,8 @@ const StudioMeetTheTeam = () => {
     let isSectionActive = false;
     let initialRightPosition = 0;
     let lastScrollY = window.scrollY;
+    let canScrollUp = false; // New flag to control upward scrolling
+    let horizontalScrollCompleted = false; // Track if horizontal scroll is completed
     
     // Calculate initial position
     const calculateInitialPosition = () => {
@@ -65,8 +67,10 @@ const StudioMeetTheTeam = () => {
         ? parseInt(currentTransform.replace('translateX(', '').replace('px)', '')) 
         : initialRightPosition;
       
-      // If the grid is not fully right, block upward scrolling
-      return currentX < initialRightPosition;
+      // ZAWSZE blokuj scrollowanie do góry jeśli nie jesteśmy w pozycji początkowej
+      // Użyj tolerancji 5px żeby uniknąć problemów z precyzją
+      const tolerance = 5;
+      return Math.abs(currentX - initialRightPosition) > tolerance;
     };
     
     // Intersection observer to detect when section comes into view
@@ -75,6 +79,8 @@ const StudioMeetTheTeam = () => {
         if (entry.isIntersecting) {
           // Section is in view
           isSectionActive = true;
+          canScrollUp = false; // ZAWSZE blokuj scrollowanie do góry na początku
+          horizontalScrollCompleted = false; // Reset horizontal scroll completion
           
           // Start horizontal scrolling only if we're not at the initial position
           const currentTransform = rightContainer?.style.transform || '';
@@ -90,6 +96,7 @@ const StudioMeetTheTeam = () => {
           // Section is out of view
           isSectionActive = false;
           isScrollingHorizontally = false;
+          canScrollUp = true; // Allow normal scrolling when section is not active
           document.body.style.overflow = '';
         }
       });
@@ -100,18 +107,23 @@ const StudioMeetTheTeam = () => {
     }
     
     // Capture scroll events to detect direction
-    const handleScroll = () => {
+    const handleScroll = (e) => {
       // Only do special handling if section is active
       if (!isSectionActive) return;
       
       // Detect scroll direction
       const scrollDirection = window.scrollY > lastScrollY ? 'down' : 'up';
       
-      // If scrolling up and we're not at the initial right position
+      // If scrolling up and we should block it
       if (scrollDirection === 'up' && shouldBlockScrollUp()) {
+        // Prevent default scroll behavior
+        e.preventDefault();
+        window.scrollTo(0, lastScrollY); // Keep scroll position
+        
         // Force horizontal scrolling
         isScrollingHorizontally = true;
         document.body.style.overflow = 'hidden';
+        canScrollUp = false;
       }
       
       lastScrollY = window.scrollY;
@@ -130,10 +142,10 @@ const StudioMeetTheTeam = () => {
       
       // When scrolling up and the section is active
       if (e.deltaY < 0) {
-        // If the grid is not in its rightmost position (initial position),
-        // we need to move it back to the right first before allowing vertical scroll
-        if (currentX < initialRightPosition) {
+        // ZAWSZE blokuj scrollowanie do góry jeśli nie jesteśmy w pozycji początkowej
+        if (shouldBlockScrollUp()) {
           e.preventDefault();
+          e.stopPropagation();
           
           // Calculate new position (moving right when scrolling up)
           let newX = currentX - e.deltaY; // e.deltaY is negative when scrolling up
@@ -142,20 +154,32 @@ const StudioMeetTheTeam = () => {
           // Apply the new position
           rightContainer.style.transform = `translateX(${newX}px)`;
           
-          // If we've reached the initial position and still trying to scroll up more
-          if (newX >= initialRightPosition) {
-            // Only now allow vertical scrolling to continue
-            isScrollingHorizontally = false;
-            document.body.style.overflow = '';
-          } else {
-            // Still scrolling horizontally
-            isScrollingHorizontally = true;
-            document.body.style.overflow = 'hidden';
+          // Zawsze blokuj scrollowanie do góry dopóki nie dojedziesz do samego początku
+          isScrollingHorizontally = true;
+          document.body.style.overflow = 'hidden';
+          canScrollUp = false;
+          
+          // Tylko gdy jesteśmy DOKŁADNIE w pozycji początkowej, pozwól na scrollowanie do góry
+          const tolerance = 5;
+          if (Math.abs(newX - initialRightPosition) <= tolerance) {
+            // Jesteśmy w pozycji początkowej (lub bardzo blisko)
+            // Ustaw dokładnie pozycję początkową
+            rightContainer.style.transform = `translateX(${initialRightPosition}px)`;
+            
+            // Mały delay żeby upewnić się, że jesteśmy na początku
+            setTimeout(() => {
+              isScrollingHorizontally = false;
+              document.body.style.overflow = '';
+              canScrollUp = true;
+            }, 100);
           }
+          
+          return; // Don't process further
         } else {
-          // We're at the rightmost position, allow normal vertical scrolling
+          // Jesteśmy w pozycji początkowej, pozwól na normalne scrollowanie
           isScrollingHorizontally = false;
           document.body.style.overflow = '';
+          canScrollUp = true;
         }
       } 
       // When scrolling down
@@ -192,12 +216,17 @@ const StudioMeetTheTeam = () => {
           // Check if we reached the left limit when scrolling down
           if (newX <= minX) {
             // We've scrolled all the way left (all photos are now visible)
+            // ALE nie pozwalaj na scrollowanie do góry! Użytkownik musi wrócić do początku
+            horizontalScrollCompleted = true; // Mark horizontal scroll as completed
             isScrollingHorizontally = false;
             document.body.style.overflow = '';
             
-            // Let a small delay before enabling vertical scroll
+            // NIE pozwalaj na scrollowanie do góry tutaj - użytkownik musi wrócić do początku
+            canScrollUp = false; // Nadal blokuj scrollowanie do góry
+            
+            // Let a small delay before enabling vertical scroll (ale tylko w dół)
             setTimeout(() => {
-              window.scrollBy(0, 1); // Tiny scroll to continue natural movement
+              window.scrollBy(0, 1); // Tiny scroll to continue natural movement DOWN
             }, 50);
           }
         }
@@ -206,11 +235,53 @@ const StudioMeetTheTeam = () => {
     
     // Add event listeners
     window.addEventListener('wheel', handleWheel, { passive: false });
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: false });
+    
+    // Additional event listener to prevent scroll up when needed
+    const preventScrollUp = (e) => {
+      if (isSectionActive && shouldBlockScrollUp()) {
+        if (e.key === 'ArrowUp' || e.key === 'PageUp' || e.key === 'Home') {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }
+    };
+    
+    // Touch events for mobile
+    const preventTouchScroll = (e) => {
+      if (isSectionActive && shouldBlockScrollUp()) {
+        const touch = e.touches[0];
+        const startY = touch.clientY;
+        
+        const handleTouchMove = (moveEvent) => {
+          const currentTouch = moveEvent.touches[0];
+          const deltaY = currentTouch.clientY - startY;
+          
+          // If scrolling up (deltaY > 0) and we should block it
+          if (deltaY > 0 && shouldBlockScrollUp()) {
+            moveEvent.preventDefault();
+            moveEvent.stopPropagation();
+          }
+        };
+        
+        const handleTouchEnd = () => {
+          document.removeEventListener('touchmove', handleTouchMove);
+          document.removeEventListener('touchend', handleTouchEnd);
+        };
+        
+        document.addEventListener('touchmove', handleTouchMove, { passive: false });
+        document.addEventListener('touchend', handleTouchEnd);
+      }
+    };
+    
+    window.addEventListener('keydown', preventScrollUp);
+    document.addEventListener('touchstart', preventTouchScroll, { passive: false });
     
     return () => {
       window.removeEventListener('wheel', handleWheel);
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('keydown', preventScrollUp);
+      document.removeEventListener('touchstart', preventTouchScroll);
       window.removeEventListener('resize', calculateInitialPosition);
       observer.disconnect();
       document.body.style.overflow = ''; // Reset overflow on unmount

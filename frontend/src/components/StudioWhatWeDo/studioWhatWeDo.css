@@ -74,8 +74,12 @@
     font-weight: 700;
     line-height: 46px;
     font-style: 'Helvetica Neue', sans-serif;
-    color: #ffffff;
+    color: #333333;
     cursor: auto;
+}
+
+.studioWhatWeDoContainerBottomContainerContainerOneContainerLeftContainerText:hover {
+    color: #ffffff;
 }
 
 .studioWhatWeDoContainerBottomContainerContainerOneContainerRightContainerDivText {

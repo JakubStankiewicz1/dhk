@@ -39,8 +39,8 @@
 
 .studioHeroTwoContainerLeft {
     flex: 1 1 0;
-    min-width: 320px;
-    max-width: 480px;
+    min-width: 420px;
+    max-width: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,14 +53,22 @@
     position: relative;
     width: 100%;
     aspect-ratio: 1/1;
-    background: rgba(255,255,255,0.02);
-    border-radius: 24px;
+    /* background: rgba(255,255,255,0.02); */
+    /* border-radius: 28px; */
     overflow: hidden;
-    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12);
-    border: 1.5px solid rgba(255,255,255,0.12);
+    box-shadow: 0 6px 40px 0 rgba(0,0,0,0.15);
+    /* border: 1.8px solid rgba(255,255,255,0.15); */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* transform: scale(1.35); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.studioHeroTwoGridBg:hover {
+    /* transform: scale(1.37); */
+    /* box-shadow: 0 8px 48px 0 rgba(0,0,0,0.18); */
+    /* border-color: rgba(255,255,255,0.18); */
 }
 
 .studioHeroTwoGridSvg {
@@ -101,15 +109,38 @@
     color: #e0e0e0;
 }
 
+.svg-hover-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* transform: translateY(-20px); */
+}
+
+.svg-hover-wrapper:hover {
+    /* transform: scale(1.02); */
+}
+
 .svg-hover-wrapper .svg-hover {
-  display: none;
+    display: none;
 }
+
 .svg-hover-wrapper:hover .svg-default {
-  display: none;
+    display: none;
 }
+
 .svg-hover-wrapper:hover .svg-hover {
-  display: block;
+    display: block;
 }
+
 .svg-hover-wrapper .svg-default {
-  display: block;
+    display: block;
+}
+
+.svg-default,
+.svg-hover {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
 }

@@ -5,12 +5,12 @@ import assets from '../../assets/assets';
 const StudioLeadershipTeam = () => {
   const teamMembers = [
     { name: "AJ Scheuble", position: "Senior Associate", image: assets.StudioLeadershipTeamImgOne },
-    { name: "Christiaan van Aswegen", position: "Principal", image: assets.StudioLeadershipTeamImgOne },
-    { name: "Daniel Hookins", position: "Associate", image: assets.StudioLeadershipTeamImgOne },
-    { name: "Daphne Nederstigt", position: "Senior Associate", image: assets.StudioLeadershipTeamImgOne },
-    { name: "Derick Henstra", position: "Director", image: assets.StudioLeadershipTeamImgOne },
-    { name: "Fahiema Regal", position: "Associate", image: assets.StudioLeadershipTeamImgOne },
-    { name: "François Hugo", position: "Principal", image: assets.StudioLeadershipTeamImgOne }
+    { name: "Christiaan van Aswegen", position: "Associate | Professional Architect", image: assets.StudioLeadershipTeamImgTwo },
+    { name: "Daniel Hookins", position: "Senior Associate", image: assets.StudioLeadershipTeamImgThree },
+    { name: "Daphne Nederstigt", position: "Senior Associate", image: assets.StudioLeadershipTeamImgFour },
+    { name: "Derick Henstra", position: "Fouding Partner | Executive Chairman", image: assets.StudioLeadershipTeamImgFive },
+    { name: "Fahiema Regal", position: "Associate", image: assets.StudioLeadershipTeamImgSix },
+    { name: "Francois Hugo", position: "Associate", image: assets.StudioLeadershipTeamImgSeven  }
   ];
 
   return (

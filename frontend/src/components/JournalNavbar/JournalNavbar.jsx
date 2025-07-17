@@ -1,9 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './journalNavbar.css';
 import { RiArrowDownSLine } from "react-icons/ri";
 import { NavLink } from 'react-router-dom';
 
 const JournalNavbar = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleItemClick = (item) => {
+    setIsDropdownOpen(false);
+    // Tutaj możesz dodać logikę filtrowania artykułów
+    console.log('Selected:', item.label);
+  };
+
+  // Zamknij dropdown przy kliknięciu poza nim
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const dropdownItems = [
+    { id: 'all', label: 'all articles' },
+    { id: 'insights', label: 'insights' },
+    { id: 'friends', label: 'friends' },
+    { id: 'events', label: 'events' },
+    { id: 'press', label: 'press' },
+    { id: 'career', label: 'career' },
+    { id: 'studio', label: 'studio' },
+    { id: 'sustainability', label: 'sustainability' },
+    { id: 'people', label: 'people' },
+    { id: 'projects', label: 'projects' }
+  ];
   return (
     <div className='journalNavbar'>
         <div className="journalNavbarContainer">
@@ -12,11 +51,11 @@ const JournalNavbar = () => {
                 <div className="journalNavbarContainerLeftContainer">
                     <div className="journalNavbarContainerLeftContainerOne">
                         <div className="journalNavbarContainerLeftContainerOneDiv">
-                        <div className="journalNavbarContainerLeftContainerOneContainer">
+                        <NavLink to="/menu" className="journalNavbarContainerLeftContainerOneContainer">
                             <p className="journalNavbarContainerLeftContainerOneContainerText">
                                 home
                             </p>
-                        </div>
+                        </NavLink>
 
                         <div className="journalNavbarContainerLeftContainerOneHover">
                             <div className="journalNavbarContainerLeftContainerOneHoverCont">
@@ -39,7 +78,7 @@ const JournalNavbar = () => {
                                     </div>
 
                                     <div className="journalNavbarContainerLeftContainerTwoContainerLeftContainerTwo">
-                                        <div className="journalNavbarContainerLeftContainerTwoContainerLeftContainerTwoContainer">
+                                        <div className={`journalNavbarContainerLeftContainerTwoContainerLeftContainerTwoContainer ${isDropdownOpen ? 'rotated' : ''}`}>
                                             <RiArrowDownSLine className='journalNavbarContainerLeftContainerTwoContainerLeftContainerTwoContainerIcon' />
                                         </div>
                                     </div>
@@ -52,11 +91,25 @@ const JournalNavbar = () => {
                                 </div>
                             </div>
 
-                            <div className="journalNavbarContainerLeftContainerTwoContainerRight">
-                                <div className="journalNavbarContainerLeftContainerTwoContainerRightContainer">
+                            <div className="journalNavbarContainerLeftContainerTwoContainerRight" ref={dropdownRef}>
+                                <div className="journalNavbarContainerLeftContainerTwoContainerRightContainer" onClick={toggleDropdown}>
                                     <p className="journalNavbarContainerLeftContainerTwoContainerRightContainerText">
                                         all articles
                                     </p>
+                                </div>
+
+                                <div className={`journalNavbarContainerLeftContainerTwoContainerRightDropdown ${isDropdownOpen ? 'open' : ''}`}>
+                                    {dropdownItems.map((item) => (
+                                        <div 
+                                            key={item.id} 
+                                            className="journalNavbarContainerLeftContainerTwoContainerRightDropdownItem"
+                                            onClick={() => handleItemClick(item)}
+                                        >
+                                            <p className="journalNavbarContainerLeftContainerTwoContainerRightDropdownItemText">
+                                                {item.label}
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
 
                                 <div className="journalNavbarContainerLeftContainerTwoContainerRightHover">
@@ -73,11 +126,11 @@ const JournalNavbar = () => {
                     <div className="journalNavbarContainerLeftContainerThree">
                         <div className="journalNavbarContainerLeftContainerThreeContainer">
                             <div className="journalNavbarContainerLeftContainerThreeContainerOne">
-                                <div className="journalNavbarContainerLeftContainerThreeContainerOneContainer">
+                                <NavLink to="/menu" className="journalNavbarContainerLeftContainerThreeContainerOneContainer">
                                     <p className="journalNavbarContainerLeftContainerThreeContainerOneContainerText">
                                         projects,
                                     </p>
-                                </div>
+                                </NavLink>
 
                                 <div className="journalNavbarContainerLeftContainerThreeContainerOneHover">
                                     <div className="journalNavbarContainerLeftContainerThreeContainerOneHoverCont">
@@ -89,11 +142,11 @@ const JournalNavbar = () => {
                             </div>
 
                             <div className="journalNavbarContainerLeftContainerThreeContainerTwo">
-                                <div className="journalNavbarContainerLeftContainerThreeContainerTwoContainer">
+                                <NavLink to="/menu" className="journalNavbarContainerLeftContainerThreeContainerTwoContainer">
                                     <p className="journalNavbarContainerLeftContainerThreeContainerTwoContainerText">
                                         studio,
                                     </p>
-                                </div>
+                                </NavLink>
 
                                 <div className="journalNavbarContainerLeftContainerThreeContainerTwoHover">
                                     <div className="journalNavbarContainerLeftContainerThreeContainerTwoHoverCont">

@@ -4,62 +4,70 @@ import './homePhilosophy.css';
 const HomePhilosophy = () => {
 
   useEffect(() => {
-    // Parallax effect for "we" text
-    const handleScroll = () => {
+    // Poczekaj aż animacja CSS się skończy (1.1s)
+    setTimeout(() => {
       const weText = document.querySelector('.homePhilosophyContainerTopContainerLeftContainerText');
       const philosophySection = document.querySelector('.homePhilosophy');
-      const lastLine = document.querySelector('.homePhilosophyContainerTopContainerRightContainerText:nth-child(4)'); // "design for the future"
       
-      if (weText && philosophySection && lastLine) {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const sectionTop = philosophySection.offsetTop;
-        const sectionHeight = philosophySection.offsetHeight;
+      if (weText && philosophySection) {
+        // Dodaj klasę żeby usunąć animację CSS
+        weText.classList.add('parallax-ready');
         
-        // Sprawdzamy czy jesteśmy w obszarze sekcji philosophy
-        if (scrollTop >= sectionTop && scrollTop <= sectionTop + sectionHeight) {
-          const scrollInSection = scrollTop - sectionTop;
-          const startThreshold = 100; // Pierwsze 100px bez ruchu
+        // Bardzo prosty i niezawodny efekt parallax z progiem i limitem
+        const handleScroll = () => {
+          const scrollTop = window.pageYOffset;
+          const sectionTop = philosophySection.offsetTop;
           
-          // Pozycje elementów
-          const weRect = weText.getBoundingClientRect();
-          const lastLineRect = lastLine.getBoundingClientRect();
-          const weTop = weRect.top + window.pageYOffset;
-          const lastLineTop = lastLineRect.top + window.pageYOffset;
+          // Sprawdź czy jesteśmy w sekcji i przescrollowaliśmy co najmniej próg
+          const scrollIntoSection = scrollTop - sectionTop;
+          const threshold = 0; // Próg
           
-          // Dystans który "we" ma do pokonania żeby dotrzeć do pozycji ostatniej linii
-          const totalDistance = lastLineTop - weTop;
-          
-          if (scrollInSection > startThreshold) {
-            // Obliczamy progress po przeminięciu pierwszych 100px
-            const activeScrollDistance = scrollInSection - startThreshold;
-            const maxActiveScroll = sectionHeight - startThreshold;
-            const progress = Math.min(activeScrollDistance / maxActiveScroll, 1);
+          if (scrollIntoSection >= threshold) {
+            // Zaczynamy parallax dopiero po przekroczeniu progu
+            const adjustedScroll = scrollIntoSection - threshold;
+            const parallaxSpeed = 0.5; // Szybkość parallax
+            let translateY = adjustedScroll * parallaxSpeed;
             
-            // "we" przesuwa się w dół z efektem parallax (0.5x szybkości scrolla)
-            const parallaxFactor = 0.5;
-            const translateY = progress * totalDistance * parallaxFactor;
+            // Maksymalna wartość translateY - zatrzymaj na wysokości "design for the future"
+            const maxTranslateY = 210; // Maksymalne przesunięcie w pikselach
+            translateY = Math.min(translateY, maxTranslateY);
             
-            weText.style.transform = `translateY(${translateY}px) scale(1) rotate(0deg)`;
+            // Zastosuj transform bezpośrednio z !important żeby przebić animację CSS
+            weText.style.setProperty('transform', `translateY(${translateY}px)`, 'important');
             weText.style.setProperty('--current-translateY', `${translateY}px`);
+            
+            // Debug
+            console.log('ScrollIntoSection:', scrollIntoSection, 'AdjustedScroll:', adjustedScroll, 'TranslateY:', translateY, 'MaxTranslateY:', maxTranslateY);
           } else {
-            // Przed progiem 100px - pozycja początkowa
-            weText.style.transform = 'translateY(0px) scale(1) rotate(0deg)';
+            // Przed progiem - pozycja początkowa
+            weText.style.setProperty('transform', `translateY(0px)`, 'important');
             weText.style.setProperty('--current-translateY', '0px');
+            
+            // Debug
+            console.log('Before threshold. ScrollIntoSection:', scrollIntoSection, 'Threshold:', threshold);
           }
-        } else if (scrollTop < sectionTop) {
-          // Przed sekcją - pozycja początkowa z animacji CSS
-          weText.style.transform = 'translateY(0px) scale(1) rotate(0deg)';
-          weText.style.setProperty('--current-translateY', '0px');
-        }
-      }
-    };
+        };
 
-    // Dodajemy event listener do window scroll
-    window.addEventListener('scroll', handleScroll, { passive: true });
+        // Dodaj event listener
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        
+        // Wywołaj raz na początku
+        handleScroll();
+
+        // Cleanup function
+        window.parallaxCleanup = () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      } else {
+        console.log('Elements not found:', { weText: !!weText, philosophySection: !!philosophySection });
+      }
+    }, 100); // Poczekaj 100ms aż animacja się skończy
 
     // Cleanup
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      if (window.parallaxCleanup) {
+        window.parallaxCleanup();
+      }
     };
   }, []);
   return (

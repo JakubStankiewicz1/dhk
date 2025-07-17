@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './menu.css';
 import assets from '../../assets/assets';
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 
 const Menu = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
   // Funkcja do ustawienia kursora na początku inputu
   const handleInputFocus = (event) => {
@@ -13,6 +14,11 @@ const Menu = () => {
     setTimeout(() => {
       event.target.setSelectionRange(0, 0);
     }, 0);
+  };
+
+  // Funkcja do zamknięcia menu i powrotu do poprzedniej strony
+  const handleCloseMenu = () => {
+    navigate(-1); // Wraca do poprzedniej strony w historii
   };
   return (
     <div className='menu'>
@@ -61,7 +67,7 @@ const Menu = () => {
                     <div className="menuContainerTopContainerRight">
                         <div className="menuContainerTopContainerRightContainer">
                             <div className="menuContainerTopContainerRightContainerOne">
-                                <div className="menuContainerTopContainerRightContainerOneContainer">
+                                <div className="menuContainerTopContainerRightContainerOneContainer" onClick={handleCloseMenu}>
                                     <p className="menuContainerTopContainerRightContainerOneContainerText">
                                         close
                                     </p>

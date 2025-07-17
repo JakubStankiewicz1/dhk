@@ -181,8 +181,8 @@ const HomeAwards = () => {
                 <div 
                   className={`homeAwardsImageContainer visible`}
                   style={{
-                    transform: `translateY(${hoveredAward * 45.1}px)`,
-                    transition: 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                    transform: `translateY(${hoveredAward * 28}px)`,
+                    transition: 'all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
                   }}
                 >
                   <img 
