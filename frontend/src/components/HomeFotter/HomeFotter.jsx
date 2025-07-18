@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './homeFotter.css';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const HomeFotter = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
+  const { theme } = useTheme();
 
   // Funkcja do ustawienia kursora na początku inputu
   const handleInputFocus = (event) => {
@@ -14,7 +16,7 @@ const HomeFotter = () => {
   };
 
   return (
-    <div className='homeFotter'>
+    <div className={`homeFotter ${theme}`}>
         <div className="homeFotterContainer">
             {/* Left Part */}
             <div className="homeFotterContainerLeft">

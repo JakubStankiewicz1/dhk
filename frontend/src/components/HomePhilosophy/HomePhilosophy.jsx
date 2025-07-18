@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import './homePhilosophy.css';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const HomePhilosophy = () => {
+  const { theme } = useTheme();
 
   useEffect(() => {
     // Poczekaj aż animacja CSS się skończy (1.1s)
@@ -71,7 +73,7 @@ const HomePhilosophy = () => {
     };
   }, []);
   return (
-    <div className='homePhilosophy'>
+    <div className={`homePhilosophy ${theme}`}>
         <div className="homePhilosophyContainer">
             {/* Top Part */}
             <div className="homePhilosophyContainerTop">

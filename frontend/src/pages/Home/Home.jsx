@@ -8,10 +8,13 @@ import HomeFeaturedProjects from '../../components/HomeFeaturedProjects/HomeFeat
 import HomeAwards from '../../components/HomeAwards/HomeAwards';
 import HomeJournal from '../../components/HomeJournal/HomeJournal';
 import HomeFotter from '../../components/HomeFotter/HomeFotter';
+import { ThemeProvider, useTheme } from '../../contexts/ThemeContext';
 
-const Home = () => {
+const HomeContent = () => {
+  const { theme } = useTheme();
+
   return (
-    <div className='home'>
+    <div className={`home ${theme}`}>
       <HomeHero />
       <HomeNavbar />
       <HomePhilosophy />
@@ -21,7 +24,15 @@ const Home = () => {
       <HomeJournal />
       <HomeFotter />
     </div>
-  )
-}
+  );
+};
+
+const Home = () => {
+  return (
+    <ThemeProvider>
+      <HomeContent />
+    </ThemeProvider>
+  );
+};
 
 export default Home

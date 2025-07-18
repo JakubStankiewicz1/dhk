@@ -181,3 +181,36 @@
         transform: scale(1) rotate(0deg);
     }
 }
+
+/* Light mode styles */
+.homePhilosophy.light {
+    background-color: #ffffff;
+}
+
+.homePhilosophy.light .homePhilosophyContainerBottomContainerLeftContainerText {
+    color: #000000;
+}
+
+.homePhilosophy.light .homePhilosophyContainerBottomContainerRightContainerText {
+    color: #333333;
+}
+
+.homePhilosophy.light .homePhilosophyContainerTopContainerLeftContainerText {
+    color: #000000;
+}
+
+.homePhilosophy.light .homePhilosophyContainerTopContainerRightContainerText {
+    color: #000000;
+}
+
+.homePhilosophy.light .homePhilosophyContainerTopContainerRightContainerTextContainer {
+    color: #333333;
+}
+
+.homePhilosophy.light .homePhilosophyContainerTopContainerRightContainerTextContainerText {
+    color: #333333;
+}
+
+.homePhilosophy.light .homePhilosophyContainerTopContainerRightContainerTextSeparator {
+    background-color: #000000;
+}

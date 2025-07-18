@@ -216,3 +216,26 @@
     font-family: 'Helvetica Now Display', sans-serif;
     color: #ffffff;
 }
+
+/* Light mode styles */
+.homeAwards.light {
+    background-color: #ffffff;
+}
+
+.homeAwards.light .homeAwardsContainerLeftContainerText {
+    color: #000000;
+}
+
+.homeAwards.light .homeAwardsContainerRightContainerBottomContainerButtonContainerOneText,
+.homeAwards.light .homeAwardsContainerRightContainerBottomContainerButtonContainerTwoText,
+.homeAwards.light .homeAwardsContainerRightContainerBottomContainerButtonContainerThreeText {
+    color: #000000;
+}
+
+.homeAwards.light .homeAwardsContainerRightContainerBottomContainerButtonContainer:hover {
+    background-color: #000000;
+}
+
+.homeAwards.light .homeAwardsContainerRightContainerBottomContainerButtonContainer:hover .homeAwardsContainerRightContainerBottomContainerButtonContainerTwoText {
+    color: #ffffff;
+}

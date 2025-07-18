@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './homeNavbar.css';
 import { NavLink } from 'react-router';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const HomeNavbar = () => {
   const navbarRef = useRef(null);
   const [isFixed, setIsFixed] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +44,7 @@ const HomeNavbar = () => {
   }, [isFixed]);
 
   return (
-    <div className='homeNavbar' ref={navbarRef}>
+    <div className={`homeNavbar ${theme}`} ref={navbarRef}>
         <div className="homeNavbarContainer">
 
             {/* Left Part */}
@@ -118,7 +120,7 @@ const HomeNavbar = () => {
 
                             {/* One */}
                             <div className="homeNavbarContainerRightContainerOneContainerOne">
-                                <div className="homeNavbarContainerRightContainerOneContainerOneContainer">
+                                <div className="homeNavbarContainerRightContainerOneContainerOneContainer" onClick={toggleTheme}>
                                     <p className="homeNavbarContainerRightContainerOneContainerOneContainerText">
                                         dark
                                     </p>
@@ -136,7 +138,7 @@ const HomeNavbar = () => {
 
                             {/* Three */}
                             <div className="homeNavbarContainerRightContainerOneContainerThree">
-                                <div className="homeNavbarContainerRightContainerOneContainerThreeContainer">
+                                <div className="homeNavbarContainerRightContainerOneContainerThreeContainer" onClick={toggleTheme}>
                                     <p className="homeNavbarContainerRightContainerOneContainerThreeContainerText">
                                         light
                                     </p>

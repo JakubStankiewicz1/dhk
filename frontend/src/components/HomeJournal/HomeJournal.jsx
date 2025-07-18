@@ -2,8 +2,10 @@ import React from 'react';
 import './homeJournal.css';
 import HomeJournalElement from '../HomeJournalElement/HomeJournalElement';
 import assets from '../../assets/assets';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const HomeJournal = () => {
+  const { theme } = useTheme();
   // Dane dla każdego elementu journal
   const journalData = [
     {
@@ -39,7 +41,7 @@ const HomeJournal = () => {
   ];
 
   return (
-    <div className='homeJournal'>
+    <div className={`homeJournal ${theme}`}>
         <div className="homeJournalContainer">
             {/* Top Part */}
             <div className="homeJournalContainerTop">

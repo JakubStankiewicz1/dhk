@@ -138,3 +138,26 @@
     display: flex;
     flex: 1;
 }
+
+/* Light mode styles */
+.homeFeaturedProjects.light {
+    background-color: #ffffff;
+}
+
+.homeFeaturedProjects.light .homeFeaturedProjectsTopContainerText {
+    color: #000000;
+}
+
+.homeFeaturedProjects.light .homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonOneText,
+.homeFeaturedProjects.light .homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonTwoText,
+.homeFeaturedProjects.light .homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonThreeText {
+    color: #000000;
+}
+
+.homeFeaturedProjects.light .homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButton:hover {
+    background-color: #000000;
+}
+
+.homeFeaturedProjects.light .homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButton:hover .homeFeaturedProjectsContainerBottomContainerMiddleContainerThreeContainerButtonTwoText {
+    color: #ffffff;
+}

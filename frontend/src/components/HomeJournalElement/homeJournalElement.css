@@ -5,7 +5,7 @@
     position: relative;
     /* border-radius: 8px; */
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
 
     /* border: 1px solid white; */
 }
@@ -19,13 +19,13 @@
     font-family: 'Helvetica Now Display', sans-serif;
     /* background-color: rgba(0, 0, 0, 0.9); */
     padding: 8px 12px;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.2s ease, transform 0.2s ease;
     z-index: 1100;
     pointer-events: none;
-    -webkit-backdrop-filter: blur(10px);
+    /* -webkit-backdrop-filter: blur(10px); */
     /* backdrop-filter: blur(10px); */
     /* border: 1px solid rgba(255, 255, 255, 0.2); */
     white-space: nowrap;
@@ -209,10 +209,10 @@
     font-weight: 600;
     color: #ffffff;
     font-family: 'Helvetica Now Display', sans-serif;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     color: #000000;
     padding: 4px 8px;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     display: inline-block;
     text-transform: lowercase;
 }
@@ -287,3 +287,51 @@
 }
 
 /* Ensure content stays above the overlay */
+
+/* Light mode styles */
+.homeJournalElement.light .homeJournalElementContainerBottom {
+    background-color: #ffffff;
+    /* border: 1px solid #e0e0e0; */
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.homeJournalElement.light .homeJournalElementContainerBottomContainerContainerOneContainerText {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.homeJournalElement.light .homeJournalElementContainerBottomContainerContainerTwoContainerText {
+    color: #000000;
+}
+
+.homeJournalElement.light .homeJournalElementContainerBottomContainerBottomContainerText {
+    color: #666666;
+}
+
+.homeJournalElement.light .homeJournalElementHoverText {
+    color: #000000;
+    /* background-color: rgba(255, 255, 255, 0.95); */
+    /* -webkit-backdrop-filter: blur(10px); */
+    /* backdrop-filter: blur(10px); */
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
+}
+
+.homeJournalElement.light .viewArticleButton {
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 12px;
+    /* border-radius: 6px; */
+    /* -webkit-backdrop-filter: blur(10px); */
+    /* backdrop-filter: blur(10px); */
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+.homeJournalElement.light:hover .homeJournalElementContainerTop::after {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.homeJournalElement.light .azaMeets {
+    color: #ffffff;
+    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); */
+}

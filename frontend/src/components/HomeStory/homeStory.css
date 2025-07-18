@@ -158,3 +158,23 @@
     max-width: 400px;
     /* background-color: red; */
 }
+
+/* Light mode styles */
+.homeStory.light .homeStoryContainerTextContainerLeftButtonTextOne,
+.homeStory.light .homeStoryContainerTextContainerLeftButtonTextTwo,
+.homeStory.light .homeStoryContainerTextContainerLeftButtonTextThree {
+    color: #000000;
+}
+
+.homeStory.light .homeStoryContainerTextContainerRightContainerOneContainerText,
+.homeStory.light .homeStoryContainerTextContainerRightContainerTwoContainerText {
+    color: #000000;
+}
+
+.homeStory.light .homeStoryContainerTextContainerLeftButton:hover .homeStoryContainerTextContainerLeftButtonTextTwo {
+    color: #ffffff;
+}
+
+.homeStory.light .homeStoryContainerTextContainerLeftButton:hover {
+    background-color: #000000;
+}

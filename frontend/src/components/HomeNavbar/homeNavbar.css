@@ -1,19 +1,26 @@
 .homeNavbar {
     width: 100%;
     height: 60px;
-    /* background-color: #000000; */
-    /* color: white; */
     position: sticky;
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    /* margin-top: 475px; */
+    /* transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); */
+}
+
+/* Light Mode Styles */
+.homeNavbar.light {
+    /* background-color: #ffffff; */
+    color: #000000;
 }
 
 .homeNavbar.fixed {
     margin-top: 0;
     /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3); */
+}
+
+.homeNavbar.light.fixed {
+    /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); */
 }
 
 .homeNavbarContainer {
@@ -87,8 +94,67 @@
 }
 
 .homeNavbarContainerLeftContainerTopContainerText:hover {
-    /* color: rgb(99, 99, 99); */
-    /* font-weight: 700; */
+    color: rgb(99, 99, 99);
+    font-weight: 700;
+}
+
+/* Light Mode Text Styles */
+.homeNavbar.light .homeNavbarContainerLeftContainerTopContainerText,
+.homeNavbar.light .homeNavbarContainerMiddleContainerOneContainerText,
+.homeNavbar.light .homeNavbarContainerMiddleContainerTwoContainerText,
+.homeNavbar.light .homeNavbarContainerMiddleContainerThreeContainerText,
+.homeNavbar.light .homeNavbarContainerRightContainerOneContainerOneContainerText,
+.homeNavbar.light .homeNavbarContainerRightContainerOneContainerTwoContainerText,
+.homeNavbar.light .homeNavbarContainerRightContainerOneContainerThreeContainerText,
+.homeNavbar.light .homeNavbarContainerRightContainerTwoContainerText {
+    color: black;
+}
+
+.homeNavbar.light .homeNavbarContainerLeftContainerTopContainerText:hover,
+.homeNavbar.light .homeNavbarContainerMiddleContainerOneContainerText:hover,
+.homeNavbar.light .homeNavbarContainerMiddleContainerTwoContainerText:hover,
+.homeNavbar.light .homeNavbarContainerMiddleContainerThreeContainerText:hover,
+.homeNavbar.light .homeNavbarContainerRightContainerOneContainerOneContainerText:hover,
+.homeNavbar.light .homeNavbarContainerRightContainerOneContainerThreeContainerText:hover,
+.homeNavbar.light .homeNavbarContainerRightContainerTwoContainerText:hover {
+    color: rgb(156, 156, 156);
+}
+
+.homeNavbar.light .homeNavbarContainerLeftContainerBottomDiv {
+    background-color: #000000;
+}
+
+/* Light Mode Hover Animation */
+.homeNavbar.light .homeNavbarContainerLeftContainerHover {
+    background-color: #000000;
+    color: white;
+}
+
+.homeNavbar.light .homeNavbarContainerLeftContainerHoverContText {
+    color: white;
+}
+
+/* Active State for Dark/Light Toggle */
+.homeNavbar.dark .homeNavbarContainerRightContainerOneContainerOneContainerText {
+    color: white;
+}
+
+.homeNavbar.dark .homeNavbarContainerRightContainerOneContainerThreeContainerText {
+    color: #636363;
+}
+
+.homeNavbar.light .homeNavbarContainerRightContainerOneContainerOneContainerText {
+    color: #636363;
+}
+
+.homeNavbar.light .homeNavbarContainerRightContainerOneContainerThreeContainerText {
+    color: black;
+}
+
+.homeNavbarContainerRightContainerOneContainerOneContainer,
+.homeNavbarContainerRightContainerOneContainerThreeContainer {
+    cursor: pointer;
+    /* transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); */
 }
 
 /* Hover Animation for Home */
@@ -112,7 +178,7 @@
     z-index: 1001;
     opacity: 0;
     transform: translateY(-20px) translateX(-20px);
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); */
 }
 
 .homeNavbarContainerLeftContainerHoverCont {

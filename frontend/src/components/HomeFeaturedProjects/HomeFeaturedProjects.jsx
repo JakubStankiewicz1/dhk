@@ -2,10 +2,13 @@ import React from 'react';
 import './homeFeaturedProjects.css';
 import HomeProjectElement from '../HomeProjectElement/HomeProjectElement';
 import assets from '../../assets/assets';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const HomeFeaturedProjects = () => {
+  const { theme } = useTheme();
+  
   return (
-    <div className='homeFeaturedProjects'>
+    <div className={`homeFeaturedProjects ${theme}`}>
         <div className="homeFeaturedProjectsContainer">
             {/* Top Part */}
             <div className="homeFeaturedProjectsTop">

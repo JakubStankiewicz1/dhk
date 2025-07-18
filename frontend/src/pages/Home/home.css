@@ -3,3 +3,8 @@
     display: flex;
     flex-direction: column;
 }
+
+/* Light mode styles */
+.home.light {
+    background-color: #ffffff;
+}

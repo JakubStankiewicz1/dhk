@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./homeAwards.css";
 import assets from "../../assets/assets";
+import { useTheme } from '../../contexts/ThemeContext';
 
 const awards = [
   {
@@ -149,6 +150,7 @@ const awards = [
 const HomeAwards = () => {
   const [hoveredAward, setHoveredAward] = useState(null);
   const [visibleCount, setVisibleCount] = useState(10); // Domyślnie pokazuj 10 elementów
+  const { theme } = useTheme();
 
   const loadMore = () => {
     setVisibleCount(prevCount => prevCount + 10); // Dodaj kolejne 10
@@ -158,7 +160,7 @@ const HomeAwards = () => {
   const hasMoreAwards = visibleCount < awards.length; // Sprawdź czy są jeszcze nagrody do załadowania
 
   return (
-    <div className="homeAwards">
+    <div className={`homeAwards ${theme}`}>
       <div className="homeAwardsContainer">
         {/* Left Part */}
         <div className="homeAwardsContainerLeft">

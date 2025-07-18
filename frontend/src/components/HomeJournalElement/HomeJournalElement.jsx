@@ -1,10 +1,12 @@
 import React, { useState, useRef } from 'react';
 import './homeJournalElement.css';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const HomeJournalElement = ({ image, category, title, description }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const elementRef = useRef(null);
+  const { theme } = useTheme();
 
   const handleMouseMove = (e) => {
     if (elementRef.current) {
@@ -26,7 +28,7 @@ const HomeJournalElement = ({ image, category, title, description }) => {
 
   return (
     <div 
-      className="homeJournalElement"
+      className={`homeJournalElement ${theme}`}
       ref={elementRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}

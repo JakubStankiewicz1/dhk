@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import './homeStory.css';
 import assets from '../../assets/assets';
+import { useTheme } from '../../contexts/ThemeContext';
 
 const HomeStory = () => {
+  const { theme } = useTheme();
 
   useEffect(() => {
     // Parallax effect for text section
@@ -46,7 +48,7 @@ const HomeStory = () => {
   }, []);
 
   return (
-    <div className='homeStory'>
+    <div className={`homeStory ${theme}`}>
         <div className="homeStoryContainer">
 
             {/* Images Section */}

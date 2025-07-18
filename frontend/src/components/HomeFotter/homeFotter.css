@@ -256,3 +256,138 @@
     height: 5px;
     background-color: #ffffff;
 }
+
+/* Light mode styles */
+.homeFotter.light {
+    background-color: #ffffff;
+}
+
+/* Left side text */
+.homeFotter.light .homeFotterContainerLeftContainerOneContainerText,
+.homeFotter.light .homeFotterContainerLeftContainerTwoContainerText {
+    color: #000000;
+}
+
+.homeFotter.light .homeFotterContainerLeftContainerTwoContainerText:hover {
+    color: #666666;
+}
+
+/* Right side navigation */
+.homeFotter.light .homeFotterContainerRightContainerOneContainerOneContainerTwoText,
+.homeFotter.light .homeFotterContainerRightContainerOneContainerTwoContainerText,
+.homeFotter.light .homeFotterContainerRightContainerOneContainerThreeContainerText,
+.homeFotter.light .homeFotterContainerRightContainerOneContainerFourContainerText {
+    color: #000000;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerOneContainerTwoContainerText:hover,
+.homeFotter.light .homeFotterContainerRightContainerOneContainerThreeContainerText:hover,
+.homeFotter.light .homeFotterContainerRightContainerOneContainerFourContainerText:hover {
+    color: #666666;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerOneContainerOneContainer:hover .homeFotterContainerRightContainerOneContainerOneContainerTwoText {
+    color: #666666;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerOneContainerOneContainerOneDiv {
+    background-color: #000000;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerOneContainerOneContainer:hover .homeFotterContainerRightContainerOneContainerOneContainerOneDiv {
+    background-color: #666666;
+}
+
+/* Social media links */
+.homeFotter.light .homeFotterContainerRightContainerTwoContainerOneContainerText,
+.homeFotter.light .homeFotterContainerRightContainerTwoContainerTwoContainerText,
+.homeFotter.light .homeFotterContainerRightContainerTwoContainerThreeContainerText,
+.homeFotter.light .homeFotterContainerRightContainerTwoContainerFourContainerText,
+.homeFotter.light .homeFotterContainerRightContainerTwoContainerFiveContainerText {
+    color: #000000;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerTwoContainerOneContainerText:hover,
+.homeFotter.light .homeFotterContainerRightContainerTwoContainerTwoContainerText:hover,
+.homeFotter.light .homeFotterContainerRightContainerTwoContainerThreeContainerText:hover,
+.homeFotter.light .homeFotterContainerRightContainerTwoContainerFourContainerText:hover,
+.homeFotter.light .homeFotterContainerRightContainerTwoContainerFiveContainerText:hover {
+    color: #666666;
+}
+
+/* Newsletter section */
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerOneContainerText {
+    color: #000000;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerTwoContainerInputIndicatorText,
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerThreeContainerInputIndicatorText {
+    color: #000000;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerTwoContainerInput,
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerThreeContainerInput {
+    color: #000000;
+    /* border-bottom: 1px solid #e0e0e0; */
+}
+
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerTwoContainerInput::placeholder,
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerThreeContainerInput::placeholder {
+    color: #BBBBBB;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerTwoContainerInput:focus,
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerThreeContainerInput:focus {
+    color: #000000;
+    /* border-bottom: 1px solid #000000; */
+}
+
+/* Submit button */
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerFourContainerOneContainerText,
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerFourContainerTwoContainerText,
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerFourContainerFourContainerText {
+    color: #B2B2B2;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerFourContainerDiv {
+    /* border: 1px solid #e0e0e0; */
+    /* padding: 8px 16px; */
+    /* border-radius: 4px; */
+    transition: all 0.3s ease;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerFourContainerDiv:hover .homeFotterContainerRightContainerThreeContainerFourContainerOneContainerText,
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerFourContainerDiv:hover .homeFotterContainerRightContainerThreeContainerFourContainerTwoContainerText,
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerFourContainerDiv:hover .homeFotterContainerRightContainerThreeContainerFourContainerFourContainerText {
+    color: #000000;
+    /* border-color: #000000; */
+}
+
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerFourContainerDiv:hover .homeFotterContainerRightContainerThreeContainerFourContainerOneContainerText,
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerFourContainerDiv:hover .homeFotterContainerRightContainerThreeContainerFourContainerTwoContainerText,
+.homeFotter.light .homeFotterContainerRightContainerThreeContainerFourContainerDiv:hover .homeFotterContainerRightContainerThreeContainerFourContainerFourContainerText {
+    color: #000000;
+}
+
+/* Contact us button */
+.homeFotter.light .homeFotterContainerRightContainerFourContainerButtonOneContainerText,
+.homeFotter.light .homeFotterContainerRightContainerFourContainerButtonTwoContainerText,
+.homeFotter.light .homeFotterContainerRightContainerFourContainerButtonThreeContainerText {
+    color: #000000;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerFourContainerButton {
+    /* border: 1px solid #e0e0e0; */
+    /* padding: 12px 24px; */
+    /* border-radius: 4px; */
+    transition: all 0.3s ease;
+}
+
+.homeFotter.light .homeFotterContainerRightContainerFourContainerButton:hover {
+    background-color: #000000;
+    /* border-color: #000000; */
+}
+
+.homeFotter.light .homeFotterContainerRightContainerFourContainerButton:hover .homeFotterContainerRightContainerFourContainerButtonTwoContainerText {
+    color: #ffffff;
+}
