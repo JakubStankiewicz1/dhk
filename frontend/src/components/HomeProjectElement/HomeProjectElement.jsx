@@ -1,61 +1,49 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './homeProjectElement.css';
 
 const HomeProjectElement = ({ image, textOne, textTwo }) => {
+  const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
   const elementRef = useRef(null);
-  const cursorFollowerRef = useRef(null);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (isHovering && cursorFollowerRef.current) {
-        setMousePosition({ x: e.clientX, y: e.clientY });
-      }
-    };
-
-    const handleMouseEnter = () => {
-      setIsHovering(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovering(false);
-    };
-
-    const element = elementRef.current;
-    if (element) {
-      element.addEventListener('mouseenter', handleMouseEnter);
-      element.addEventListener('mouseleave', handleMouseLeave);
-      document.addEventListener('mousemove', handleMouseMove);
+  const handleMouseMove = (e) => {
+    if (elementRef.current) {
+      const rect = elementRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left + 10,
+        y: e.clientY - rect.top - 10
+      });
     }
+  };
 
-    return () => {
-      if (element) {
-        element.removeEventListener('mouseenter', handleMouseEnter);
-        element.removeEventListener('mouseleave', handleMouseLeave);
-      }
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, [isHovering]);
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
 
   return (
-    <>
-      {/* Cursor Follower */}
+    <div 
+      className='homeProjectElement' 
+      ref={elementRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {/* Hover Text Element */}
       <div 
-        ref={cursorFollowerRef}
-        className={`homeProjectElementCursorFollower ${isHovering ? 'homeProjectElementCursorFollowerVisible' : ''}`}
+        className={`homeProjectElementHoverText ${isHovered ? 'visible' : ''}`}
         style={{
-          left: mousePosition.x + 50,
-          top: mousePosition.y - 5,
+          left: `${mousePosition.x}px`,
+          top: `${mousePosition.y}px`
         }}
       >
-        <div className="homeProjectElementCursorFollowerContent">
-          [ view project ]
-        </div>
+        [ view project ]
       </div>
 
-      <div className='homeProjectElement' ref={elementRef}>
-        <div className="homeProjectElementContainer">
+      <div className="homeProjectElementContainer">
             {/* Image Container */}
             <div className="homeProjectElementContainerImage">
                 <div className="homeProjectElementContainerImageContainer">
@@ -86,8 +74,7 @@ const HomeProjectElement = ({ image, textOne, textTwo }) => {
                 </div>
             </div>
         </div>
-      </div>
-    </>
+    </div>
   )
 }
 

@@ -50,6 +50,10 @@ import StudioMeetTheTeamOne from './StudioMeetTheTeamOne.webp'
 import HomeJournalElementOne from './HomeJournalElementOne.jpg';
 
 
+import HomeJournalElementTwo from './HomeJournalElementTwo.jpg';
+import HomeJournalElementThree from './HomeJournalElementThree.jpg';
+import HomeJournalElementFour from './HomeJournalElementThree.jpg';
+import HomeJournalElementFive from './HomeJournalElementFive.jpg';
 
 export default {
     HomeHeroImgOne,
@@ -101,5 +105,10 @@ export default {
     StudioLeadershipTeamImgFour,
     StudioLeadershipTeamImgFive,
     StudioLeadershipTeamImgSix,
-    StudioLeadershipTeamImgSeven
+    StudioLeadershipTeamImgSeven,
+
+    HomeJournalElementTwo,
+    HomeJournalElementThree,
+    HomeJournalElementFour,
+    HomeJournalElementFive
 }

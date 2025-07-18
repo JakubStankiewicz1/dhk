@@ -10,6 +10,33 @@
     /* border: 1px solid white; */
 }
 
+/* Hover Text Styling */
+.homeJournalElementHoverText {
+    position: absolute;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: 'Helvetica Now Display', sans-serif;
+    /* background-color: rgba(0, 0, 0, 0.9); */
+    padding: 8px 12px;
+    border-radius: 6px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 1100;
+    pointer-events: none;
+    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+    white-space: nowrap;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); */
+}
+
+.homeJournalElementHoverText.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .homeJournalElementContainer {
     width: 100%;
     height: 100%;
@@ -234,14 +261,6 @@
 .homeJournalElement:hover .azaA {
     /* transform: scale(1.05); */
     color: #ffb74d;
-}
-
-.homeJournalElement:hover .azaZA {
-    /* transform: scale(1.02); */
-}
-
-.homeJournalElement:hover .homeJournalElementContainerTopContainerContentImg {
-    /* transform: scale(1.05); */
 }
 
 /* Transitions for logo elements */
