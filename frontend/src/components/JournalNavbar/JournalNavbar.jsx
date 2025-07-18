@@ -51,24 +51,24 @@ const JournalNavbar = () => {
                 <div className="journalNavbarContainerLeftContainer">
                     <div className="journalNavbarContainerLeftContainerOne">
                         <div className="journalNavbarContainerLeftContainerOneDiv">
-                        <NavLink to="/menu" className="journalNavbarContainerLeftContainerOneContainer">
-                            <p className="journalNavbarContainerLeftContainerOneContainerText">
-                                home
-                            </p>
-                        </NavLink>
-
-                        <div className="journalNavbarContainerLeftContainerOneHover">
-                            <div className="journalNavbarContainerLeftContainerOneHoverCont">
-                                <p className="journalNavbarContainerLeftContainerOneHoverContText">
-                                    dhk
+                            <div className="journalNavbarContainerLeftContainerOneContainer">
+                                <p className="journalNavbarContainerLeftContainerOneContainerText">
+                                    home
                                 </p>
                             </div>
-                        </div>
+
+                            <NavLink to="/" className="journalNavbarContainerLeftContainerOneHover">
+                                <div className="journalNavbarContainerLeftContainerOneHoverCont">
+                                    <p className="journalNavbarContainerLeftContainerOneHoverContText">
+                                        dhk
+                                    </p>
+                                </div>
+                            </NavLink>
                         </div>
                     </div>
 
                     <div className="journalNavbarContainerLeftContainerTwo">
-                        <div className="journalNavbarContainerLeftContainerTwoContainer">
+                        <div className="journalNavbarContainerLeftContainerTwoContainer" onClick={toggleDropdown} ref={dropdownRef}>
                             <div className="journalNavbarContainerLeftContainerTwoContainerLeft">
                                 <div className="journalNavbarContainerLeftContainerTwoContainerLeftContainer">
                                     <div className="journalNavbarContainerLeftContainerTwoContainerLeftContainerOne">
@@ -91,8 +91,8 @@ const JournalNavbar = () => {
                                 </div>
                             </div>
 
-                            <div className="journalNavbarContainerLeftContainerTwoContainerRight" ref={dropdownRef}>
-                                <div className="journalNavbarContainerLeftContainerTwoContainerRightContainer" onClick={toggleDropdown}>
+                            <div className="journalNavbarContainerLeftContainerTwoContainerRight">
+                                <div className="journalNavbarContainerLeftContainerTwoContainerRightContainer">
                                     <p className="journalNavbarContainerLeftContainerTwoContainerRightContainerText">
                                         all articles
                                     </p>
@@ -103,7 +103,10 @@ const JournalNavbar = () => {
                                         <div 
                                             key={item.id} 
                                             className="journalNavbarContainerLeftContainerTwoContainerRightDropdownItem"
-                                            onClick={() => handleItemClick(item)}
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                handleItemClick(item);
+                                            }}
                                         >
                                             <p className="journalNavbarContainerLeftContainerTwoContainerRightDropdownItemText">
                                                 {item.label}
@@ -126,39 +129,39 @@ const JournalNavbar = () => {
                     <div className="journalNavbarContainerLeftContainerThree">
                         <div className="journalNavbarContainerLeftContainerThreeContainer">
                             <div className="journalNavbarContainerLeftContainerThreeContainerOne">
-                                <NavLink to="/menu" className="journalNavbarContainerLeftContainerThreeContainerOneContainer">
+                                <NavLink to="/projects" className="journalNavbarContainerLeftContainerThreeContainerOneContainer">
                                     <p className="journalNavbarContainerLeftContainerThreeContainerOneContainerText">
                                         projects,
                                     </p>
                                 </NavLink>
-
+{/* 
                                 <div className="journalNavbarContainerLeftContainerThreeContainerOneHover">
                                     <div className="journalNavbarContainerLeftContainerThreeContainerOneHoverCont">
                                         <p className="journalNavbarContainerLeftContainerThreeContainerOneHoverContText">
                                             portfolio
                                         </p>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
 
                             <div className="journalNavbarContainerLeftContainerThreeContainerTwo">
-                                <NavLink to="/menu" className="journalNavbarContainerLeftContainerThreeContainerTwoContainer">
+                                <NavLink to="/studio" className="journalNavbarContainerLeftContainerThreeContainerTwoContainer">
                                     <p className="journalNavbarContainerLeftContainerThreeContainerTwoContainerText">
                                         studio,
                                     </p>
                                 </NavLink>
 
-                                <div className="journalNavbarContainerLeftContainerThreeContainerTwoHover">
+                                {/* <div className="journalNavbarContainerLeftContainerThreeContainerTwoHover">
                                     <div className="journalNavbarContainerLeftContainerThreeContainerTwoHoverCont">
                                         <p className="journalNavbarContainerLeftContainerThreeContainerTwoHoverContText">
                                             team
                                         </p>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
 
                             <div className="journalNavbarContainerLeftContainerThreeContainerThree">
-                                <div className="journalNavbarContainerLeftContainerThreeContainerThreeContainer">
+                                <NavLink to="/journal" className="journalNavbarContainerLeftContainerThreeContainerThreeContainer">
                                     <div className="journalNavbarContainerLeftContainerThreeContainerThreeContainerOne">
                                         <p className="journalNavbarContainerLeftContainerThreeContainerThreeContainerOneText">
                                             journal
@@ -168,7 +171,7 @@ const JournalNavbar = () => {
                                     <div className="journalNavbarContainerLeftContainerThreeContainerThreeContainerTwo">
                                         <div className="journalNavbarContainerLeftContainerThreeContainerThreeContainerTwoDiv" />
                                     </div>
-                                </div>
+                                </NavLink>
                             </div>
                         </div>
                     </div>
@@ -183,13 +186,6 @@ const JournalNavbar = () => {
                     </p>
                 </NavLink>
 
-                {/* <div className="journalNavbarContainerRightHover">
-                    <div className="journalNavbarContainerRightHoverCont">
-                        <p className="journalNavbarContainerRightHoverContText">
-                            nav
-                        </p>
-                    </div>
-                </div> */}
             </div>
         </div>
     </div>

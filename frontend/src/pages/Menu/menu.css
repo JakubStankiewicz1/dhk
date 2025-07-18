@@ -1,7 +1,7 @@
 .menu {
     width: 100%;
     height: 100vh;
-    background-color: #000000;
+    background-color: #0D0D0D;
 }
 
 .menuContainer {
@@ -119,8 +119,9 @@
     width: 100%;
     height: 100%;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
+
 
 .menuContainerMiddleContainerRight {
     display: flex;
@@ -149,6 +150,8 @@
     /* border-radius: 6px; */
     /* transition: all 0.3s ease; */
     cursor: pointer;
+
+    /* background-color: red; */
 }
 
 .menuContainerMiddleContainerMiddleContainerOneContainerText,

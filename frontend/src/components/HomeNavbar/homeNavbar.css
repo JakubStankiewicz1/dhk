@@ -1,20 +1,19 @@
 .homeNavbar {
     width: 100%;
     height: 60px;
-    background-color: #000000;
-    color: white;
-    position: absolute;
-    top: 475px;
+    /* background-color: #000000; */
+    /* color: white; */
+    position: sticky;
+    top: 0;
     left: 0;
-    z-index: 5;
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* margin-top: 475px; */
 }
 
 .homeNavbar.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 15;
-    transform: translateY(0);
+    margin-top: 0;
+    /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3); */
 }
 
 .homeNavbarContainer {
@@ -87,11 +86,78 @@
     cursor: pointer;
 }
 
+.homeNavbarContainerLeftContainerTopContainerText:hover {
+    /* color: rgb(99, 99, 99); */
+    /* font-weight: 700; */
+}
+
+/* Hover Animation for Home */
+.homeNavbarContainerLeftContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.homeNavbarContainerLeftContainerHover {
+    min-width: 160px;
+    height: 160px;
+    background-color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    display: none;
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(-20px) translateX(-20px);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.homeNavbarContainerLeftContainerHoverCont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeNavbarContainerLeftContainerHoverContText {
+    font-size: 48px;
+    font-family: 'Helvetica Now Display', sans-serif;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #ffffff;
+}
+
+.homeNavbarContainerLeftContainerDiv:hover .homeNavbarContainerLeftContainerHover {
+    display: block;
+    opacity: 1;
+}
+
+/* Hover Animation works only when navbar is fixed/sticky */
+.homeNavbar.fixed .homeNavbarContainerLeftContainerDiv:hover .homeNavbarContainerLeftContainerHover {
+    display: block;
+    opacity: 1;
+}
+
+/* Hide animation when navbar is not fixed */
+.homeNavbar:not(.fixed) .homeNavbarContainerLeftContainerHover {
+    display: none !important;
+    opacity: 0 !important;
+}
+
 .homeNavbarContainerLeftContainerBottomDiv {
     background-color: #ffffff;
     width: 5px;
     height: 5px;
-    transform: translateY(15px);
+    transform: translateY(15px) translateX(15px);
+}
+
+.homeNavbarContainerRightContainerTwoContainer {
+    background-color: red;
 }
 
 .homeNavbarContainerMiddleContainerOneContainerText {
@@ -145,14 +211,14 @@
     cursor: pointer;
 }
 
-.homeNavbarContainerRightContainerOneContainerOneContainerText:hover {
+/* .homeNavbarContainerRightContainerOneContainerOneContainerText:hover {
     color: rgb(99, 99, 99);
     font-weight: 700;
-}
+} */
 
 .homeNavbarContainerRightContainerOneContainerTwoContainerText {
     font-family: 'Helvetica Now Display', sans-serif;
-    color: white;
+    color: #636363;
     font-size: 16px;
     font-weight: 800;
     line-height: 22px;
@@ -161,17 +227,17 @@
 
 .homeNavbarContainerRightContainerOneContainerThreeContainerText {
     font-family: 'Helvetica Now Display', sans-serif;
-    color: white;
+    color: #636363;
     font-size: 16px;
     font-weight: 800;
     line-height: 22px;
     cursor: pointer;
 }
 
-.homeNavbarContainerRightContainerOneContainerThreeContainerText:hover {
+/* .homeNavbarContainerRightContainerOneContainerThreeContainerText:hover {
     color: rgb(99, 99, 99);
     font-weight: 700;
-}
+} */
 
 .homeNavbarContainerRightContainerTwoContainerText {
     font-family: 'Helvetica Now Display', sans-serif;

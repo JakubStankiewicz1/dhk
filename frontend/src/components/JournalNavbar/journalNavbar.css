@@ -145,6 +145,9 @@
     align-items: center;
     justify-content: center;
     gap: 4px;
+
+    /* background-color: red; */
+    cursor: pointer;
 }
 
 .journalNavbarContainerLeftContainerThreeContainerThreeContainerTwoDiv {
@@ -167,8 +170,8 @@
 .journalNavbarContainerLeftContainerThreeContainerOneHover,
 .journalNavbarContainerLeftContainerThreeContainerTwoHover,
 .journalNavbarContainerRightHover {
-    width: 130px;
-    height: 130px;
+    min-width: 160px;
+    height: 160px;
     background-color: #000000;
     position: absolute;
     top: 0;
@@ -198,10 +201,10 @@
 .journalNavbarContainerLeftContainerThreeContainerOneHoverContText,
 .journalNavbarContainerLeftContainerThreeContainerTwoHoverContText,
 .journalNavbarContainerRightHoverContText {
-    font-size: 20px;
+    font-size: 48px;
     font-family: 'Helvetica Now Display', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+    font-weight: 900;
+    letter-spacing: 4px;
     color: white;
 }
 
@@ -223,9 +226,15 @@
 .journalNavbarContainerLeftContainerThreeContainerOne:hover,
 .journalNavbarContainerLeftContainerThreeContainerTwo:hover,
 .journalNavbarContainerRight:hover {
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .journalNavbarContainerLeftContainerThreeContainerThree {
     transform: translateY(4px);
+}
+
+.journalNavbarContainerLeftContainerOneDiv {
+    /* background-color: red; */
+    width: 140px;
+    cursor: pointer;
 }

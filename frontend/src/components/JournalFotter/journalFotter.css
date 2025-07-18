@@ -33,6 +33,14 @@
     font-family: 'Helvetica Now Display';
 }
 
+.journalFotterContainerLeftContainerTwoContainerText {
+    cursor: pointer;
+}
+
+.journalFotterContainerLeftContainerTwoContainerText:hover {
+    color: #808080;
+}
+
 .journalFotterContainerRightContainer {
     display: flex;
     flex-direction: row;
@@ -48,8 +56,6 @@
     align-items: center;
     cursor: pointer;
     gap: 40px;
-
-    /* background-color: red; */
     cursor: pointer;
 }
 
@@ -81,6 +87,15 @@
     line-height: 19px;
     color: #000000;
     font-family: 'Helvetica Now Display';
+    cursor: pointer;
+}
+
+.journalFotterContainerRightContainerTwoContainerOneContainerText:hover,
+.journalFotterContainerRightContainerTwoContainerTwoContainerText:hover,
+.journalFotterContainerRightContainerTwoContainerThreeContainerText:hover,
+.journalFotterContainerRightContainerTwoContainerFourContainerText:hover,
+.journalFotterContainerRightContainerTwoContainerFiveContainerText:hover {
+    color: #808080;
 }
 
 .journalFotterContainerRightContainerOneContaineOneContainer {
@@ -88,7 +103,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* gap: 10px; */
     transform: translateX(-11px);
 }
 
@@ -101,6 +115,13 @@
     line-height: 19px;
     color: #000000;
     font-family: 'Helvetica Now Display';
+    cursor: pointer;
+}
+
+.journalFotterContainerRightContainerOneContaineOneContainerText:hover,
+.journalFotterContainerRightContainerOneContaineTwoContainerText:hover,
+.journalFotterContainerRightContainerOneContaineThreeContainerText:hover {
+    color: #808080;
 }
 
 .journalFotterContainerRightContainerThreeContainerOneContainerText {
@@ -129,7 +150,6 @@
 .journalFotterContainerRightContainerThreeContainerTwoContainerInputIndicator,
 .journalFotterContainerRightContainerThreeContainerThreeContainerInputIndicator {
     position: absolute;
-    /* left: -25px; */
     top: 50%;
     transform: translateY(-60%);
     z-index: 1;
@@ -163,7 +183,7 @@
 .journalFotterContainerRightContainerThreeContainerTwoContainerInput::placeholder,
 .journalFotterContainerRightContainerThreeContainerThreeContainerInput::placeholder {
     transform: translateX(-20px);
-    color: #000000;
+    color: #BBBBBB;
     font-size: 14px;
     font-weight: 800;
     line-height: 19px;
@@ -186,6 +206,7 @@
 .journalFotterContainerRightContainerThreeContainerTwoContainerInput:focus::placeholder,
 .journalFotterContainerRightContainerThreeContainerThreeContainerInput:focus::placeholder {
     transform: translateX(-20px);
+    color: #BBBBBB;
 }
 
 .journalFotterContainerRightContainerThreeContainerFourContainer {
@@ -193,12 +214,9 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
-
-    /* background-color: red; */
 }
 
 .journalFotterContainerRightContainerThreeContainerFourContainerDiv {
-    /* background-color: red; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -229,6 +247,15 @@
     align-items: center;
     gap: 10px;
     transform: translateX(-15px);
+    cursor: pointer;
+}
+
+.journalFotterContainerRightContainerOneContaineFourContainer:hover .journalFotterContainerRightContainerOneContaineFourContainerLeftDiv {
+    background-color: #808080;
+}
+
+.journalFotterContainerRightContainerOneContaineFourContainer:hover .journalFotterContainerRightContainerOneContaineFourContainerRightText {
+    color: #808080;
 }
 
 .journalFotterContainerRightContainerOneContaineFourContainerLeftDiv {

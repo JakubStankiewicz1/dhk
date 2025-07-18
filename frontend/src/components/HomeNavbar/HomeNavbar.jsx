@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './homeNavbar.css';
+import { NavLink } from 'react-router';
 
 const HomeNavbar = () => {
   const navbarRef = useRef(null);
@@ -10,23 +11,29 @@ const HomeNavbar = () => {
       if (document.body.classList.contains('hero-animating')) {
         return;
       }
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop >= 475) {
-        if (navbarRef.current) {
-          navbarRef.current.style.position = 'fixed';
-          navbarRef.current.style.top = '0px';
-          navbarRef.current.style.zIndex = '15';
-        }
-    } else {
-        if (navbarRef.current) {
-          navbarRef.current.style.position = 'absolute';
-          navbarRef.current.style.top = '475px';
-          navbarRef.current.style.zIndex = '5';
-        }
-    }
       
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const triggerPoint = 475;
+
+      if (scrollTop >= triggerPoint) {
+        if (!isFixed) {
+          setIsFixed(true);
+          if (navbarRef.current) {
+            navbarRef.current.classList.add('fixed');
+          }
+        }
+      } else {
+        if (isFixed) {
+          setIsFixed(false);
+          if (navbarRef.current) {
+            navbarRef.current.classList.remove('fixed');
+          }
+        }
+      }
     };
+
+    // Inicjalne sprawdzenie pozycji
+    handleScroll();
 
     window.addEventListener('scroll', handleScroll);
     return () => {
@@ -41,19 +48,29 @@ const HomeNavbar = () => {
             {/* Left Part */}
             <div className="homeNavbarContainerLeft">
                 <div className="homeNavbarContainerLeftContainer">
-
-                    {/* Top */}
-                    <div className="homeNavbarContainerLeftContainerTop">
-                        <div className="homeNavbarContainerLeftContainerTopContainer">
-                            <p className="homeNavbarContainerLeftContainerTopContainerText">
-                                home
-                            </p>
+                    <div className="homeNavbarContainerLeftContainerDiv">
+                        {/* Top */}
+                        <div className="homeNavbarContainerLeftContainerTop">
+                            <div className="homeNavbarContainerLeftContainerTopContainer">
+                                <p className="homeNavbarContainerLeftContainerTopContainerText">
+                                    home
+                                </p>
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Bottom */}
-                    <div className="homeNavbarContainerLeftContainerBottom">
-                        <div className="homeNavbarContainerLeftContainerBottomDiv" />
+                        {/* Bottom */}
+                        <div className="homeNavbarContainerLeftContainerBottom">
+                            <div className="homeNavbarContainerLeftContainerBottomDiv" />
+                        </div>
+
+                        {/* Hover Animation */}
+                        <NavLink to="/" className="homeNavbarContainerLeftContainerHover">
+                            <div className="homeNavbarContainerLeftContainerHoverCont">
+                                <p className="homeNavbarContainerLeftContainerHoverContText">
+                                    dhk
+                                </p>
+                            </div>
+                        </NavLink>
                     </div>
                 </div>
             </div>
@@ -64,29 +81,29 @@ const HomeNavbar = () => {
 
                     {/* One */}
                     <div className="homeNavbarContainerMiddleContainerOne">
-                        <div className="homeNavbarContainerMiddleContainerOneContainer">
+                        <NavLink to="/projects" className="homeNavbarContainerMiddleContainerOneContainer">
                             <p className="homeNavbarContainerMiddleContainerOneContainerText">
                                 projects,
                             </p>
-                        </div>
+                        </NavLink>
                     </div>
 
                     {/* Two */}
                     <div className="homeNavbarContainerMiddleContainerTwo">
-                        <div className="homeNavbarContainerMiddleContainerTwoContainer">
+                        <NavLink to="/studio" className="homeNavbarContainerMiddleContainerTwoContainer">
                             <p className="homeNavbarContainerMiddleContainerTwoContainerText">
                                 studio,
                             </p>
-                        </div>
+                        </NavLink>
                     </div>
 
                     {/* Three */}
                     <div className="homeNavbarContainerMiddleContainerThree">
-                        <div className="homeNavbarContainerMiddleContainerThreeContainer">
+                        <NavLink to="/journal" className="homeNavbarContainerMiddleContainerThreeContainer">
                             <p className="homeNavbarContainerMiddleContainerThreeContainerText">
                                 journal
                             </p>
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
             </div>
@@ -130,11 +147,11 @@ const HomeNavbar = () => {
 
                     {/* Two */}
                     <div className="homeNavbarContainerRightContainerTwo">
-                        <div className="homeNavbarContainerRightContainerTwoContainer">
+                        <NavLink to="/menu" className="homeNavbarContainerRightContainerTwoContainer">
                             <p className="homeNavbarContainerRightContainerTwoContainerText">
                                 menu
                             </p>
-                        </div>
+                        </NavLink>
                     </div>
                 </div>
             </div>

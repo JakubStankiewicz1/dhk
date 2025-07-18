@@ -121,30 +121,31 @@ const HomeJournal = () => {
                                     <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButton">
 
                                         <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainer">
-                                            <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerDiv">    
-                                            <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerOne">
-                                                <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerOneContainer">
-                                                    <p className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerOneContainerText">
-                                                        [
-                                                    </p>
-                                                </div>
-                                            </div>
+                                            <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerDiv">
 
-                                            <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerTwo">
-                                                <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerTwoContainer">
-                                                    <p className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerTwoContainerText">
-                                                        view more
-                                                    </p>
+                                                <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerOne">
+                                                    <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerOneContainer">
+                                                        <p className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerOneContainerText">
+                                                            [
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerThree">
-                                                <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerThreeContainer">
-                                                    <p className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerThreeContainerText">
-                                                        ]
-                                                    </p>
+                                                <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerTwo">
+                                                    <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerTwoContainer">
+                                                        <p className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerTwoContainerText">
+                                                            view more
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                            </div>
+
+                                                <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerThree">
+                                                    <div className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerThreeContainer">
+                                                        <p className="homeJournalContainerBottomContainerBottomContainerThreeContainerButtonContainerThreeContainerText">
+                                                            ]
+                                                        </p>
+                                                    </div>
+                                                </div>
 
                                             </div>
 
